@@ -12,6 +12,8 @@ app.set('view engine', 'ejs');
 var db = require("./database.js")
 let mineral=require("./public/assets/data/minerals.json")
 let land=require("./public/assets/data/land.json")
+let permits=require("./public/assets/data/permits.json")
+let explorations=require("./public/assets/data/explorations.json")
 //setup public folder
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended:false}));
@@ -46,7 +48,9 @@ app.post("/add/mineral", async (req,res) => {
                     location:row.location,
                     account_balance:row.account_balance,
                     mineral:row.mineral,
-                    type_of_mining:row.type_of_mining}
+                    type_of_mining:row.type_of_mining,
+                    exploration:[],
+                    permits:[]}
                 console.log(row)
                 res.render('mineral_selection',{layout:'./layouts/secondary',name:row.name,
                 location:row.location,
@@ -90,7 +94,9 @@ app.post("/add/land", async (req,res) => {
             price_sqrm=price_sqrm*e.price_square_metre
         }
     })
-    currentUser.location=location
+    if(req.body.location){
+        currentUser.location=location
+    }
     currentUser.account_balance=currentUser.account_balance-price_sqrm
      var sql ='UPDATE user set location = coalesce(?,location), account_balance = coalesce(?,account_balance) WHERE name = ?'
      var params =[location,currentUser.account_balance, currentUser.name]
@@ -110,13 +116,57 @@ app.post("/add/land", async (req,res) => {
         
      });
  })
-app.get('/mineral-selection',async (req,res) =>{
+ app.post("/add/permits", async (req,res) => {
+    let permit = []
+    let permitsCost = 0
+    if(req.body.option1 != null){
+       permit.push(req.body.option1)
+       permits.forEach(e=>{
+        if(e.type==req.body.option1){
+            permitsCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option2 != null){
+        permit.push(req.body.option2)
+        permits.forEach(e=>{
+         if(e.type==req.body.option2){
+             permitsCost+=e.cost
+         }
+        })
+     }
+     if(req.body.option3 != null){
+        permit.push(req.body.option3)
+        permits.forEach(e=>{
+         if(e.type==req.body.option3){
+             permitsCost+=e.cost
+         }
+        })
+     }
+     currentUser.permits=permits
+     currentUser.account_balance-permitsCost
+  
+     var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
+     var params =[currentUser.account_balance, currentUser.name]
+     db.run(sql, params, function (err, result) {
+         if (err){
+             res.status(400).json({"error": err.message})
+             return;
+         }else{
+                 res.render('permits_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 location:currentUser.location,
+                 account_balance:currentUser.account_balance,
+                 mineral:currentUser.mineral,
+                 type_of_mining:currentUser.type_of_mining} )
+                 
+         }
+         
+        
+     });
+ })
+app.get('/permits',async (req,res) =>{
     console.log(currentUser)
-    res.render('mineral_selection',{layout:'./layouts/secondary',name:currentUser.name,
-    location:currentUser.location,
-    account_balance:currentUser.account_balance,
-    mineral:currentUser.mineral,
-    type_of_mining:currentUser.type_of_mining});
+    res.render('permits_selection',);
 });
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
