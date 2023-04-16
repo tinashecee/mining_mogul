@@ -1,0 +1,6 @@
+[{"type":"Roads",
+"cost":100000},
+{"type":"Electricity",
+"cost":50000},
+{"type":"Water",
+"cost":50000}]

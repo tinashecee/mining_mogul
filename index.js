@@ -14,6 +14,9 @@ let mineral=require("./public/assets/data/minerals.json")
 let land=require("./public/assets/data/land.json")
 let permits=require("./public/assets/data/permits.json")
 let explorations=require("./public/assets/data/explorations.json")
+let infrastructures=require("./public/assets/data/infrastructure.json")
+let equipments=require("./public/assets/data/equipment.json")
+let employeess=require("./public/assets/data/employeess.json")
 //setup public folder
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended:false}));
@@ -50,7 +53,10 @@ app.post("/add/mineral", async (req,res) => {
                     mineral:row.mineral,
                     type_of_mining:row.type_of_mining,
                     exploration:[],
-                    permits:[]}
+                    permits:[],
+                infrastructure:[],
+                equipment:[],
+            employees:[]}
                 console.log(row)
                 res.render('mineral_selection',{layout:'./layouts/secondary',name:row.name,
                 location:row.location,
@@ -117,6 +123,62 @@ app.post("/add/land", async (req,res) => {
      });
  })
  app.post("/add/permits", async (req,res) => {
+    let exploration = []
+    let explorationCost = 0
+    if(req.body.option1 != null){
+       exploration.push(req.body.option1)
+       explorations.forEach(e=>{
+        if(e.type==req.body.option1){
+            explorationCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option2 != null){
+        exploration.push(req.body.option2)
+        explorations.forEach(e=>{
+         if(e.type==req.body.option2){
+             explorationCost+=e.cost
+         }
+        })
+     }
+     if(req.body.option3 != null){
+        exploration.push(req.body.option3)
+        explorations.forEach(e=>{
+         if(e.type==req.body.option3){
+             explorationCost+=e.cost
+         }
+        })
+     }
+     if(req.body.option4 != null){
+        exploration.push(req.body.option4)
+        explorations.forEach(e=>{
+         if(e.type==req.body.option4){
+             explorationCost+=e.cost
+         }
+        })
+     }
+     currentUser.exploration=exploration
+     currentUser.account_balance-explorationCost
+  
+     var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
+     var params =[currentUser.account_balance, currentUser.name]
+     db.run(sql, params, function (err, result) {
+         if (err){
+             res.status(400).json({"error": err.message})
+             return;
+         }else{
+                 res.render('permits_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 location:currentUser.location,
+                 account_balance:currentUser.account_balance,
+                 mineral:currentUser.mineral,
+                 type_of_mining:currentUser.type_of_mining} )
+                 
+         }
+         
+        
+     });
+ })
+ app.post("/add/Infrastructure", async (req,res) => {
     let permit = []
     let permitsCost = 0
     if(req.body.option1 != null){
@@ -153,7 +215,55 @@ app.post("/add/land", async (req,res) => {
              res.status(400).json({"error": err.message})
              return;
          }else{
-                 res.render('permits_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 res.render('initial_infrastructure',{layout:'./layouts/secondary',name:currentUser.name,
+                 location:currentUser.location,
+                 account_balance:currentUser.account_balance,
+                 mineral:currentUser.mineral,
+                 type_of_mining:currentUser.type_of_mining} )
+                 
+         }
+         
+        
+     });
+ }) 
+ app.post("/add/Mining-Process", async (req,res) => {
+    let infrastructure = []
+    let infrastructureCost = 0
+    if(req.body.option1 != null){
+        infrastructure.push(req.body.option1)
+        infrastructures.forEach(e=>{
+        if(e.type==req.body.option1){
+            infrastructureCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option2 != null){
+        infrastructure.push(req.body.option2)
+        infrastructures.forEach(e=>{
+         if(e.type==req.body.option2){
+            infrastructureCost+=e.cost
+         }
+        })
+     }
+     if(req.body.option3 != null){
+        infrastructure.push(req.body.option3)
+        infrastructures.forEach(e=>{
+         if(e.type==req.body.option3){
+            infrastructureCost+=e.cost
+         }
+        })
+     }
+     currentUser.infrastructure=infrastructure
+     currentUser.account_balance-infrastructureCost
+  
+     var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
+     var params =[currentUser.account_balance, currentUser.name]
+     db.run(sql, params, function (err, result) {
+         if (err){
+             res.status(400).json({"error": err.message})
+             return;
+         }else{
+                 res.render('mining_process',{layout:'./layouts/secondary',name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
@@ -164,9 +274,177 @@ app.post("/add/land", async (req,res) => {
         
      });
  })
-app.get('/permits',async (req,res) =>{
+ app.post("/add/Equipment", async (req,res) => {
+    let type_of_mining ;
+    if(req.body.option1 != null){
+        type_of_mining=req.body.option1
+        
+    }
+    if(req.body.option2 != null){
+        type_of_mining=req.body.option2
+        
+     }
+   
+     currentUser.type_of_mining=type_of_mining
+  
+     var sql ='UPDATE user set type_of_mining = coalesce(?,type_of_mining) WHERE name = ?'
+     var params =[currentUser.type_of_mining, currentUser.name]
+     db.run(sql, params, function (err, result) {
+         if (err){
+             res.status(400).json({"error": err.message})
+             return;
+         }else{
+                 res.render('equipment_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 location:currentUser.location,
+                 account_balance:currentUser.account_balance,
+                 mineral:currentUser.mineral,
+                 type_of_mining:currentUser.type_of_mining} )
+                 
+         }
+         
+        
+     });
+ })
+ app.post("/add/Employment", async (req,res) => {
+    let equipment = []
+    let equipmentCost = 0
+    if(req.body.option1 != null){
+        equipment.push(req.body.option1)
+        equipments.forEach(e=>{
+        if(e.type==req.body.option1){
+            equipmentCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option2 != null){
+        equipment.push(req.body.option2)
+        equipments.forEach(e=>{
+        if(e.type==req.body.option2){
+            equipmentCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option3 != null){
+        equipment.push(req.body.option3)
+        equipments.forEach(e=>{
+        if(e.type==req.body.option3){
+            equipmentCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option4 != null){
+        equipment.push(req.body.option4)
+        equipments.forEach(e=>{
+        if(e.type==req.body.option4){
+            equipmentCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option5 != null){
+        equipment.push(req.body.option5)
+        equipments.forEach(e=>{
+        if(e.type==req.body.option5){
+            equipmentCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option6 != null){
+        equipment.push(req.body.option6)
+        equipments.forEach(e=>{
+        if(e.type==req.body.option6){
+            equipmentCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option7 != null){
+        equipment.push(req.body.option7)
+        equipments.forEach(e=>{
+        if(e.type==req.body.option7){
+            equipmentCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option8 != null){
+        equipment.push(req.body.option8)
+        equipments.forEach(e=>{
+        if(e.type==req.body.option8){
+            equipmentCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option9 != null){
+        equipment.push(req.body.option9)
+        equipments.forEach(e=>{
+        if(e.type==req.body.option9){
+            equipmentCost+=e.cost
+        }
+       })
+    }
+     currentUser.equipment=equipment
+     currentUser.account_balance-equipmentCost
+  
+     var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
+     var params =[currentUser.account_balance, currentUser.name]
+     db.run(sql, params, function (err, result) {
+         if (err){
+             res.status(400).json({"error": err.message})
+             return;
+         }else{
+                 res.render('employees_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 location:currentUser.location,
+                 account_balance:currentUser.account_balance,
+                 mineral:currentUser.mineral,
+                 type_of_mining:currentUser.type_of_mining} )
+                 
+         }
+         
+        
+     });
+ })
+ 
+app.post("/simulate", async (req,res) => {
+    let employees = []
+    let employeesCost = 0
+    if(req.body.option1 != null){
+        employees.push(req.body.option1)
+       employeess.forEach(e=>{
+        if(e.type==req.body.option1){
+            employeesCost+=e.cost
+        }
+       })
+    }
+    if(req.body.option2 != null){
+        employees.push(req.body.option2)
+        employeess.forEach(e=>{
+         if(e.type==req.body.option2){
+            employeesCost+=e.cost
+         }
+        })
+     }
+     currentUser.employees=employees
+     currentUser.account_balance-employeesCost
+  
+     var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
+     var params =[currentUser.account_balance, currentUser.name]
+     db.run(sql, params, function (err, result) {
+         if (err){
+             res.status(400).json({"error": err.message})
+             return;
+         }else{
+                 res.render('simulate',{layout:'./layouts/secondary',name:currentUser.name,
+                 location:currentUser.location,
+                 account_balance:currentUser.account_balance,
+                 mineral:currentUser.mineral,
+                 type_of_mining:currentUser.type_of_mining} )
+                 
+         }
+         
+        
+     });
+ })
+app.get('/exploration',async (req,res) =>{
     console.log(currentUser)
-    res.render('permits_selection',);
+    res.render('exploration_and_development_selection',);
 });
 
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
