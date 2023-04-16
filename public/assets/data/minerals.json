@@ -1,0 +1,22 @@
+[{"type":"Gold",
+"value":45,
+"locations":["Masvingo","Manicaland","Mashonaland Central", "Mashonaland East"],
+"details":"Gold is one of the densest of all metals. It is a good conductor of heat and electricity. It is also soft and the most malleable and ductile of the elements; an ounce (31.1 grams; gold is weighed in troy ounces) can be beaten out to 187 square feet (about 17 square metres) in extremely thin sheets called gold leaf.",
+"ema-factor":12},
+{"type":"Platinum",
+"value":75,
+"locations":["Masvingo","Manicaland","Mashonaland Central", "Mashonaland East"],
+"details":"A very heavy, precious, silver-white metal, platinum is soft and ductile and has a high melting point and good resistance to corrosion and chemical attack.",
+"ema-factor":16},
+{"type":"Silver",
+"value":25,
+"locations":["Masvingo","Manicaland","Mashonaland Central", "Mashonaland East"],
+"details":"silver (Ag), chemical element, a white lustrous metal valued for its decorative beauty and electrical conductivity. Silver is located in Group 11 (Ib) and Period 5 of the periodic table, between copper (Period 4) and gold (Period 6), and its physical and chemical properties are intermediate between those two metals.",
+"ema-factor":8},
+{"type":"Diamond",
+"value":105,
+"locations":["Masvingo","Manicaland","Mashonaland Central", "Mashonaland East"],
+"details":"Diamond is the only gem made of a single element: It is typically about 99.95 percent carbon. The other 0.05 percent can include one or more trace elements, which are atoms that aren't part of the diamond's essential chemistry. Some trace elements can influence its color or crystal shape.",
+"ema-factor":16}
+
+]
