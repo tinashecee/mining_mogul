@@ -407,7 +407,7 @@ app.post("/add/land", async (req,res) => {
      });
  })
  
-app.post("/simulate", async (req,res) => {
+app.post("/simulation", async (req,res) => {
     let employees = []
     let employeesCost = 0
     if(req.body.option1 != null){
@@ -436,7 +436,7 @@ app.post("/simulate", async (req,res) => {
              res.status(400).json({"error": err.message})
              return;
          }else{
-                 res.render('simulate',{layout:'./layouts/secondary',name:currentUser.name,
+                 res.render('simulation',{layout:'./layouts/secondary',name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
