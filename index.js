@@ -43,7 +43,7 @@ app.post("/add/mineral", async (req,res) => {
             var sql = "select * from user where name = ?"
             var params = [name]
             db.get(sql, params, (err, row) => {
-                if (err) {
+                if (err) { 
                   res.status(400).json({"error":err.message});
                   return;
                 }
@@ -52,6 +52,7 @@ app.post("/add/mineral", async (req,res) => {
                     account_balance:row.account_balance,
                     mineral:row.mineral,
                     type_of_mining:row.type_of_mining,
+                    size:0,
                     exploration:[],
                     permits:[],
                 infrastructure:[],
@@ -74,11 +75,12 @@ app.post("/add/land", async (req,res) => {
     let name=currentUser.name
     let mineral=req.body.mineral
     currentUser.mineral=mineral
+    console.log(currentUser)
      var sql ='UPDATE user set mineral = coalesce(?,mineral) WHERE name = ?'
      var params =[mineral, name]
      db.run(sql, params, function (err, result) {
          if (err){
-             res.status(400).json({"error": err.message})
+             res.status(400).json({"error": err.message}) 
              return;
          }else{
                  res.render('land_selection',{layout:'./layouts/secondary',name:currentUser.name,
@@ -103,7 +105,10 @@ app.post("/add/land", async (req,res) => {
     if(req.body.location){
         currentUser.location=location
     }
+    currentUser.location=location
+    currentUser.size=req.body.size
     currentUser.account_balance=currentUser.account_balance-price_sqrm
+    console.log(currentUser)
      var sql ='UPDATE user set location = coalesce(?,location), account_balance = coalesce(?,account_balance) WHERE name = ?'
      var params =[location,currentUser.account_balance, currentUser.name]
      db.run(sql, params, function (err, result) {
@@ -129,7 +134,7 @@ app.post("/add/land", async (req,res) => {
        exploration.push(req.body.option1)
        explorations.forEach(e=>{
         if(e.type==req.body.option1){
-            explorationCost+=e.cost
+            explorationCost=explorationCost+e.cost
         }
        })
     }
@@ -137,7 +142,7 @@ app.post("/add/land", async (req,res) => {
         exploration.push(req.body.option2)
         explorations.forEach(e=>{
          if(e.type==req.body.option2){
-             explorationCost+=e.cost
+             explorationCost=explorationCost+e.cost
          }
         })
      }
@@ -145,7 +150,7 @@ app.post("/add/land", async (req,res) => {
         exploration.push(req.body.option3)
         explorations.forEach(e=>{
          if(e.type==req.body.option3){
-             explorationCost+=e.cost
+             explorationCost=explorationCost+e.cost
          }
         })
      }
@@ -153,13 +158,13 @@ app.post("/add/land", async (req,res) => {
         exploration.push(req.body.option4)
         explorations.forEach(e=>{
          if(e.type==req.body.option4){
-             explorationCost+=e.cost
+             explorationCost=explorationCost+e.cost
          }
         })
      }
      currentUser.exploration=exploration
-     currentUser.account_balance-explorationCost
-  
+     currentUser.account_balance-=explorationCost
+     console.log(currentUser)
      var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
      var params =[currentUser.account_balance, currentUser.name]
      db.run(sql, params, function (err, result) {
@@ -205,9 +210,9 @@ app.post("/add/land", async (req,res) => {
          }
         })
      }
-     currentUser.permits=permits
-     currentUser.account_balance-permitsCost
-  
+     currentUser.permits=permit
+     currentUser.account_balance-=permitsCost
+     console.log(currentUser)
      var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
      var params =[currentUser.account_balance, currentUser.name]
      db.run(sql, params, function (err, result) {
@@ -254,8 +259,8 @@ app.post("/add/land", async (req,res) => {
         })
      }
      currentUser.infrastructure=infrastructure
-     currentUser.account_balance-infrastructureCost
-  
+     currentUser.account_balance-=infrastructureCost
+     console.log(currentUser)
      var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
      var params =[currentUser.account_balance, currentUser.name]
      db.run(sql, params, function (err, result) {
@@ -286,7 +291,7 @@ app.post("/add/land", async (req,res) => {
      }
    
      currentUser.type_of_mining=type_of_mining
-  
+     console.log(currentUser)
      var sql ='UPDATE user set type_of_mining = coalesce(?,type_of_mining) WHERE name = ?'
      var params =[currentUser.type_of_mining, currentUser.name]
      db.run(sql, params, function (err, result) {
@@ -381,8 +386,8 @@ app.post("/add/land", async (req,res) => {
        })
     }
      currentUser.equipment=equipment
-     currentUser.account_balance-equipmentCost
-  
+     currentUser.account_balance-=equipmentCost
+     console.log(currentUser)
      var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
      var params =[currentUser.account_balance, currentUser.name]
      db.run(sql, params, function (err, result) {
@@ -422,8 +427,8 @@ app.post("/simulate", async (req,res) => {
         })
      }
      currentUser.employees=employees
-     currentUser.account_balance-employeesCost
-  
+     currentUser.account_balance-=employeesCost
+     console.log(currentUser)
      var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
      var params =[currentUser.account_balance, currentUser.name]
      db.run(sql, params, function (err, result) {
