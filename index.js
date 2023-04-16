@@ -10,6 +10,8 @@ app.use(expressLayouts)
 app.set('layout', './layouts/main')
 app.set('view engine', 'ejs');
 var db = require("./database.js")
+let mineral=require("./public/assets/data/minerals.json")
+let land=require("./public/assets/data/land.json")
 //setup public folder
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended:false}));
@@ -40,7 +42,11 @@ app.post("/add/mineral", async (req,res) => {
                   res.status(400).json({"error":err.message});
                   return;
                 }
-                currentUser=row
+                currentUser={name:row.name,
+                    location:row.location,
+                    account_balance:row.account_balance,
+                    mineral:row.mineral,
+                    type_of_mining:row.type_of_mining}
                 console.log(row)
                 res.render('mineral_selection',{layout:'./layouts/secondary',name:row.name,
                 location:row.location,
@@ -54,6 +60,56 @@ app.post("/add/mineral", async (req,res) => {
        
     });
 })
+app.post("/add/land", async (req,res) => {
+    let name=currentUser.name
+    let mineral=req.body.mineral
+    currentUser.mineral=mineral
+     var sql ='UPDATE user set mineral = coalesce(?,mineral) WHERE name = ?'
+     var params =[mineral, name]
+     db.run(sql, params, function (err, result) {
+         if (err){
+             res.status(400).json({"error": err.message})
+             return;
+         }else{
+                 res.render('land_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 location:currentUser.location,
+                 account_balance:currentUser.account_balance,
+                 mineral:currentUser.mineral,
+                 type_of_mining:currentUser.type_of_mining} )
+                 
+         }
+         
+        
+     });
+ })
+ app.post("/add/exploration", async (req,res) => {
+    let location=req.body.location
+    let price_sqrm=req.body.size
+    land.forEach(e=>{
+        if(e.location==location){
+            price_sqrm=price_sqrm*e.price_square_metre
+        }
+    })
+    currentUser.location=location
+    currentUser.account_balance=currentUser.account_balance-price_sqrm
+     var sql ='UPDATE user set location = coalesce(?,location), account_balance = coalesce(?,account_balance) WHERE name = ?'
+     var params =[location,currentUser.account_balance, currentUser.name]
+     db.run(sql, params, function (err, result) {
+         if (err){
+             res.status(400).json({"error": err.message})
+             return;
+         }else{
+                 res.render('exploration_and_development_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 location:currentUser.location,
+                 account_balance:currentUser.account_balance,
+                 mineral:currentUser.mineral,
+                 type_of_mining:currentUser.type_of_mining} )
+                 
+         }
+         
+        
+     });
+ })
 app.get('/mineral-selection',async (req,res) =>{
     console.log(currentUser)
     res.render('mineral_selection',{layout:'./layouts/secondary',name:currentUser.name,

@@ -1,0 +1,32 @@
+ <!-- Main content -->
+ <div class="container mt-5">
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <h2 class="text-center mb-4">Select land to mine</h2>
+        <form action="/add/land" method="POST">
+          <div class="mb-3">
+            <label for="mineralSelect" class="form-label">Area</label>
+            <select class="form-select" id="mineralSelect">
+              <option selected name="location" disabled>Select a province</option>
+              <option value="Harare">Harare</option>
+              <option value="Masvingo">Masvingo</option>
+              <option value="Bulawayo">Bulawayo</option>
+              <option value="Matebeleland North">Matebeleland North</option>
+              <option value="Matebeleland South">Matebeleland South</option>
+              <option value="Mashonaland West">Mashonaland West</option>
+              <option value="Mashonaland East">Mashonaland East</option>
+              <option value="Mashonaland Central">Mashonaland Central</option>
+              <option value="Manicaland">Manicaland</option>
+              <option value="Midlands">Midlands</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="mineralDetails" class="form-label">Size</label>
+                <input type="range" name="size" class="form-range" id="size-range" min="1000" max="100000" step="1000">
+          </div>
+
+          <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+      </div>
+    </div>
+  </div>
