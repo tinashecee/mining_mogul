@@ -285,10 +285,6 @@ app.post("/add/land", async (req,res) => {
         type_of_mining=req.body.option1
         
     }
-    if(req.body.option2 != null){
-        type_of_mining=req.body.option2
-        
-     }
    
      currentUser.type_of_mining=type_of_mining
      console.log(currentUser)
@@ -408,25 +404,27 @@ app.post("/add/land", async (req,res) => {
  })
  
 app.post("/simulation", async (req,res) => {
-    let employees = []
-    let employeesCost = 0
-    if(req.body.option1 != null){
-        employees.push(req.body.option1)
-       employeess.forEach(e=>{
-        if(e.type==req.body.option1){
-            employeesCost+=e.cost
+    let management_quantity=req.body.management
+    let management_cost=0
+    let general_employees_quantity=req.body.general_labour
+    let general_employees_cost=0
+    employeess.forEach(e=>{
+        if(e.type=='general_labour'){
+            general_employees_cost=general_employees_quantity*e.cost
         }
-       })
-    }
-    if(req.body.option2 != null){
-        employees.push(req.body.option2)
-        employeess.forEach(e=>{
-         if(e.type==req.body.option2){
-            employeesCost+=e.cost
-         }
-        })
-     }
-     currentUser.employees=employees
+    })
+    employeess.forEach(e=>{
+        if(e.type=='management'){
+            management_cost=management_quantity*e.cost
+        }
+    })
+     let employeesCost = general_employees_cost+management_cost 
+     currentUser.employees=[
+        {type:"General Labour",
+        size:general_employees_quantity},
+        {type:"Management",
+        size:management_quantity}
+     ]
      currentUser.account_balance-=employeesCost
      console.log(currentUser)
      var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
