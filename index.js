@@ -403,7 +403,7 @@ app.post("/add/land", async (req,res) => {
      });
  })
  
-app.post("/simulation", async (req,res) => {
+app.post("/simulation-level-one", async (req,res) => {
     let management_quantity=req.body.management
     let management_cost=0
     let general_employees_quantity=req.body.general_labour
@@ -434,7 +434,8 @@ app.post("/simulation", async (req,res) => {
              res.status(400).json({"error": err.message})
              return;
          }else{
-                 res.render('simulation',{layout:'./layouts/secondary',name:currentUser.name,
+                // res.render('simulation',{layout:'./layouts/secondary',name:currentUser.name,
+                res.render('simulation_level_one',{name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
@@ -445,9 +446,10 @@ app.post("/simulation", async (req,res) => {
         
      });
  })
-app.get('/exploration',async (req,res) =>{
-    console.log(currentUser)
-    res.render('exploration_and_development_selection',);
+app.get('/simulation-level-onee',async (req,res) =>{
+    res.render('simulation_level_one',{layout:'./layouts/main'});
 });
-
+app.get('/simulation-level-two',async (req,res) =>{
+    res.render('simulation_level_two',{layout:'./layouts/main'});
+});
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
