@@ -75,7 +75,7 @@ function firstModal(){
 
     /******************************************************************************************************************************* */
 
-    //The third modal for Equipment Maintanaince
+    //The Environmental Considerations modal for Equipment Maintanaince
 
     function fourthModal(){
         setTimeout(() => {
@@ -102,7 +102,7 @@ function firstModal(){
 
  /*****************LEVEL TWO *************************************LEVEL TWO *******************************LEVEL TWO**************** */   
 
- //The first modal for tech Investment Stage
+ //The 6th modal for random events
 function sixthModal(){
   setTimeout(() => {
       showModal6()
@@ -127,7 +127,7 @@ function sixthModal(){
   }
   
 /************************************************************************************************************************************ */
-  //The second modal for Equipment Maintanaince
+  //The 7th modal for Random Events
 
   function seventhModal(){
       setTimeout(() => {
@@ -149,7 +149,7 @@ function sixthModal(){
 
   /******************************************************************************************************************************* */
 
-  //The third modal for Equipment Maintanaince
+  //The 8th modal for Random Events
 
   function eigthModal(){
       setTimeout(() => {
@@ -172,7 +172,7 @@ function sixthModal(){
 
   /******************************************************************************************************************************* */
 
-  //The third modal for Equipment Maintanaince
+  //The 9th modal for Random Events
 
   function ninethModal(){
       setTimeout(() => {
@@ -198,13 +198,13 @@ function sixthModal(){
   }
 
   /******************Level 3********************************Level 3********************************************Level 3**************/
-   //The 11th modal 
+   //The 11th modal For Refinement
 function eleventhModal(){
   setTimeout(() => {
       showModal11()
   
       
-    }, 5000);
+    }, 1000);
   }
   var modal11 = document.getElementById("myModal11");
 
@@ -223,7 +223,7 @@ function eleventhModal(){
   }
   
 /************************************************************************************************************************************ */
-  //The 12th modal
+  //The 12th modal for refinement
 
   function twelvethModal(){
       setTimeout(() => {
@@ -245,7 +245,7 @@ function eleventhModal(){
 
   /******************************************************************************************************************************* */
 
-  //The thirteen modal 
+  //The thirteen modal for Refinement
 
   function thirteenthModal(){
       setTimeout(() => {
@@ -268,7 +268,7 @@ function eleventhModal(){
 
   /******************************************************************************************************************************* */
 
-  //The fourteenth
+  //The fourteenth for Refinement
 
   function fourteenthModal(){
       setTimeout(() => {
@@ -299,14 +299,14 @@ function eleventhModal(){
 
   
 /************************************************************************************************************************************ */
-  //
+  //Trade Policies and Regulations Modal Channel 
 
   function aModal(){
       setTimeout(() => {
           showModalA()
       
           
-        }, 5000);
+        }, 1000);
       }
       var modalA = document.getElementById("myModalA");
   
@@ -321,7 +321,7 @@ function eleventhModal(){
 
   /******************************************************************************************************************************* */
 
-  //The thirteen modal 
+  //Branding and Reputation:
 
   function bModal(){
       setTimeout(() => {
@@ -344,7 +344,7 @@ function eleventhModal(){
 
   /******************************************************************************************************************************* */
 
-  //The fourteenth
+  //Market Fluctuations
 
   function cModal(){
       setTimeout(() => {
@@ -363,6 +363,7 @@ function eleventhModal(){
   function dismissC() {
     modalC.style.display = "none";
     setTimeout(() => {
+      //Congratulations Game Complete. You can proceed to see your results
       modalD.style.display = "block";
   
       
@@ -371,14 +372,14 @@ function eleventhModal(){
 
 
 /************************************************************************************************************************************ */
-  //
+  //Equipment Maintenance The Modal
 
   function eModal(){
     setTimeout(() => {
         showModalE()
     
         
-      }, 5000);
+      }, 1000);
     }
     var modalE = document.getElementById("myModalE");
 
@@ -393,7 +394,7 @@ function dismissE() {
 
 /******************************************************************************************************************************* */
 
-//The thirteen modal 
+//Tech Investment Stage The Modal
 
 function fModal(){
     setTimeout(() => {
@@ -415,8 +416,7 @@ function dismissF() {
 }
 
 /******************************************************************************************************************************* */
-
-//The fourteenth
+//Congratulations! Here are a list of your MMCZ Export Documents
 
 function GModal(){
     setTimeout(() => {
