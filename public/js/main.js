@@ -423,7 +423,7 @@ function GModal(){
         showModalG()
     
         
-      }, 5000);
+      }, 1000);
     }
 var modalG = document.getElementById("myModalG");
 var modalH = document.getElementById("myModalH");
@@ -433,6 +433,7 @@ function showModalG() {
     modalG.style.display = "block";
 }
 function dismissG() {
+  modalE.style.display = "none";
   modalG.style.display = "none";
   setTimeout(() => {
     modalH.style.display = "block";
