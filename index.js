@@ -21,6 +21,10 @@ let employeess=require("./public/assets/data/employeess.json")
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json())
+app.use("/css",express.static("./node_modules/bootstrap/dist/css"));
+app.use("/js",express.static("./node_modules/bootstrap/dist/js"));
+//or
+app.use("/",express.static("./node_modules/bootstrap/dist/"));
 let currentUser;
 app.get('', (req, res) => {
     

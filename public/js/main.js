@@ -84,7 +84,8 @@ function firstModal(){
             
           }, 5000);
         }
-        var modal4 = document.getElementById("myModal4");
+    var modal4 = document.getElementById("myModal4");
+    var modal5 = document.getElementById("myModal5");
     
 
     function showModal4() {
@@ -98,3 +99,100 @@ function firstModal(){
         
       }, 3000);
     }
+
+ /*****************LEVEL TWO *************************************LEVEL TWO *******************************LEVEL TWO**************** */   
+
+ //The first modal for tech Investment Stage
+function sixthModal(){
+  setTimeout(() => {
+      showModal6()
+  
+      
+    }, 5000);
+  }
+  var modal6 = document.getElementById("myModal6");
+
+  
+  // Get the <span> element that closes the modal
+  //var span = document.getElementsByClassName("close")[0];
+  
+  //open modal function
+  function showModal6() {
+      modal6.style.display = "block";
+  }
+  // When the user clicks on <span> (x), close the modal
+  function dismiss6() {
+      seventhModal()
+    modal6.style.display = "none";
+  }
+  
+/************************************************************************************************************************************ */
+  //The second modal for Equipment Maintanaince
+
+  function seventhModal(){
+      setTimeout(() => {
+          showModal7()
+      
+          
+        }, 5000);
+      }
+      var modal7 = document.getElementById("myModal7");
+  
+
+  function showModal7() {
+      modal7.style.display = "block";
+  }
+  function dismiss7() {
+      eigthModal()
+    modal7.style.display = "none";
+  }
+
+  /******************************************************************************************************************************* */
+
+  //The third modal for Equipment Maintanaince
+
+  function eigthModal(){
+      setTimeout(() => {
+          showModal8()
+      
+          
+        }, 5000);
+      }
+      var modal8 = document.getElementById("myModal8");
+  
+
+  function showModal8() {
+      modal8.style.display = "block";
+  }
+ 
+  function dismiss8() {
+      ninethModal()
+    modal8.style.display = "none";
+  }
+
+  /******************************************************************************************************************************* */
+
+  //The third modal for Equipment Maintanaince
+
+  function ninethModal(){
+      setTimeout(() => {
+          showModal9()
+      
+          
+        }, 5000);
+      }
+  var modal9 = document.getElementById("myModal9");
+  var modal10 = document.getElementById("myModal10");
+  
+
+  function showModal9() {
+      modal9.style.display = "block";
+  }
+  function dismiss9() {
+    modal9.style.display = "none";
+    setTimeout(() => {
+      modal10.style.display = "block";
+  
+      
+    }, 3000);
+  }
