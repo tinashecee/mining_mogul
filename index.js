@@ -466,6 +466,24 @@ app.get('/permits-selection',async (req,res) =>{
     res.render('permits_selection.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
         account_balance:0});
 });
+app.get('/infrastructure-selection',async (req,res) =>{
+    res.render('initial_infrastructure.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
+        account_balance:0});
+});
+app.get('/mining-process-selection',async (req,res) =>{
+    res.render('mining_process.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
+        account_balance:0});
+});
+app.get('/equipment-selection',async (req,res) =>{
+    res.render('equipment_process.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
+        account_balance:0});
+});
+app.get('/employee-selection',async (req,res) =>{
+    res.render('employees_selection.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
+        account_balance:0});
+});
+
+
 app.get('/simulation-level-onee',async (req,res) =>{
     res.render('simulation_level_one',{layout:'./layouts/main'});
 });
