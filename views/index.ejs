@@ -1,4 +1,41 @@
-<div class="container text-center mt-5">
+<div id="first-splash" style="display: flex;
+align-items: center;
+justify-content: center;
+height: 100%;
+width: 100%;
+overflow: hidden;background-color: white;z-index: 5;position: absolute;"> <img src="/assets/media/mmcz splash.gif" class="gif" alt="GIF"></div>
+<div id="second-splash" style="width: 95vw;height:95vh;background-color: white;z-index: 3;position: absolute;">
+  <div class="container mt-5">
+    <h1 class="mb-4">Mining Mogul</h1>
+    <div class="row">
+      <div class="col-md-6">
+        <h3>Start Game</h3>
+        <button class="btn btn-success btn-lg mb-4" onclick="startIntro()">Play</button>
+        <br />
+        <button class="btn btn-info btn-lg mb-4">Leaderboard</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--<div id="intro-div" class="container-fluid p-0">
+  <div class="container-fluid p-0 d-flex align-items-center justify-content-center">
+    
+    <video   autoplay style="padding-left: 50px;margin: auto;" controls><source src="/assets/media/Copy of Mining Tycoon Intro .mp4" type="video/mp4"></video>
+    
+  </div>
+</div>-->
+<div id="intro-div" class="container-fluid p-0">
+  <div style="display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;">
+    <video id="myVideo" src="/assets/media/Copy of Mining Tycoon Intro .mp4" autoplay controls></video>
+  </div>
+</div>
+<div id="main-input" class="container text-center mt-5">
     <h1>Welcome to Mining Tycoon!</h1>
     <p class="lead">Enter your name to get started:</p>
     <form action="/add/mineral" method="POST">

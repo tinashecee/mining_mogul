@@ -1,3 +1,24 @@
+var first_splash = document.getElementById("first-splash");
+var second_splash = document.getElementById("second-splash");
+var main_input = document.getElementById("main-input");
+var intro_div = document.getElementById("intro-div");
+intro_div.style.display = "none";
+main_input.style.display = "none";
+setTimeout(() => {
+  first_splash.style.display = "none";
+  
+}, 3000);
+function startIntro(){
+  
+  intro_div.style.display = "block";
+  second_splash.style.display = "none"
+}
+document.getElementById('myVideo').addEventListener('ended',myHandler,false);
+    function myHandler(e) {
+      first_splash.style.display = "none";
+      intro_div.style.display = "none";
+      main_input.style.display = "block";
+    }
 const btn = document.getElementById('btn');
 
 btn.addEventListener('click', () => {

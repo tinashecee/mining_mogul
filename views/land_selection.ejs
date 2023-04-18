@@ -1,4 +1,104 @@
- <!-- Main content -->
+<!-- partial:index.partial.html -->
+<div class="wrapper">
+
+  <div class="content">
+   
+
+
+
+
+
+    <div class="product-slider">
+     
+
+      <div class="product-slider__wrp swiper-wrapper">
+        <div class="product-slider__item swiper-slide" data-target="img4">
+          <div class="product-slider__card">
+            <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405223/starwars/item-4-bg.webp" alt="star wars" class="product-slider__cover">
+            <div class="product-slider__content">
+              <h1 class="product-slider__title">
+                Buy Land
+              </h1>
+              <div class="product-ctr">
+                <div class="product-labels">
+
+                  <div class="container mt-5">
+                    <div class="row">
+                      <div class="col-md-6 offset-md-3">
+                        <h2 class="text-center mb-4">Select land to mine</h2>
+                        <form action="/add/exploration" method="POST">
+                          <div class="mb-3">
+                            <label for="mineralSelect" class="form-label">Area</label>
+                            <select class="form-select" name="location" id="mineralSelect">
+                              <option selected  disabled>Select a province</option>
+                              <option value="Harare">Harare   |  @$10 per square metre</option>
+                              <option value="Masvingo">Masvingo  |  @$10 per square metre</option>
+                              <option value="Bulawayo">Bulawayo  |  @$10 per square metre</option>
+                              <option value="Matebeleland North">Matebeleland North  |  @$10 per square metre</option>
+                              <option value="Matebeleland South">Matebeleland South  |  @$10 per square metre</option>
+                              <option value="Mashonaland West">Mashonaland West  |  @$10 per square metre</option>
+                              <option value="Mashonaland East">Mashonaland East  |  @$10 per square metre</option>
+                              <option value="Mashonaland Central">Mashonaland Central  |  @$10 per square metre</option>
+                              <option value="Manicaland">Manicaland  |  @$10 per square metre</option>
+                              <option value="Midlands">Midlands  |  @$10 per square metre</option>
+                            </select>
+                          </div>
+                          <br>
+                          <div class="mb-3">
+                            <label for="mineralDetails" class="form-label">Size</label>
+                                <input type="range" name="size" class="form-range" id="size-range" min="1000" max="100000" step="1000">
+                                <p>Value: <span id="demo"></span> square metres</p>
+                          </div>
+                
+                          <div class="product-slider__bottom">
+                            <button class="product-slider__cart" type="submit">
+                              SELECT
+                            </button>
+            
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+
+                </div>
+
+                
+
+             
+
+              </div>
+
+              <div class="product-slider__bottom">
+                <button class="product-slider__cart">
+                  SUBMIT
+                </button>
+
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+      </div>
+    </div>
+
+  </div>
+
+</div>
+<svg class="hidden" hidden>
+  <symbol id="icon-arrow-left" viewBox="0 0 32 32">
+    <path d="M0.704 17.696l9.856 9.856c0.896 0.896 2.432 0.896 3.328 0s0.896-2.432 0-3.328l-5.792-5.856h21.568c1.312 0 2.368-1.056 2.368-2.368s-1.056-2.368-2.368-2.368h-21.568l5.824-5.824c0.896-0.896 0.896-2.432 0-3.328-0.48-0.48-1.088-0.704-1.696-0.704s-1.216 0.224-1.696 0.704l-9.824 9.824c-0.448 0.448-0.704 1.056-0.704 1.696s0.224 1.248 0.704 1.696z"></path>
+  </symbol>
+  <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+    <path d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
+  </symbol>
+</svg>
+ 
+ 
+ 
+ 
+ <!-- Main content 
  <div class="container mt-5">
     <div class="row">
       <div class="col-md-6 offset-md-3">
@@ -31,3 +131,4 @@
       </div>
     </div>
   </div>
+-->
