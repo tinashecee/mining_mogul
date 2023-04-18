@@ -196,3 +196,99 @@ function sixthModal(){
       
     }, 3000);
   }
+
+  /******************Level 3********************************Level 3********************************************Level 3**************/
+   //The 11th modal 
+function eleventhModal(){
+  setTimeout(() => {
+      showModal11()
+  
+      
+    }, 5000);
+  }
+  var modal11 = document.getElementById("myModal11");
+
+  
+  // Get the <span> element that closes the modal
+  //var span = document.getElementsByClassName("close")[0];
+  
+  //open modal function
+  function showModal11() {
+      modal11.style.display = "block";
+  }
+  // When the user clicks on <span> (x), close the modal
+  function dismiss11() {
+      twelvethModal()
+    modal11.style.display = "none";
+  }
+  
+/************************************************************************************************************************************ */
+  //The 12th modal
+
+  function twelvethModal(){
+      setTimeout(() => {
+          showModal12()
+      
+          
+        }, 5000);
+      }
+      var modal12 = document.getElementById("myModal12");
+  
+
+  function showModal12() {
+      modal12.style.display = "block";
+  }
+  function dismiss12() {
+      thirteenthModal()
+    modal12.style.display = "none";
+  }
+
+  /******************************************************************************************************************************* */
+
+  //The thirteen modal 
+
+  function thirteenthModal(){
+      setTimeout(() => {
+          showModal13()
+      
+          
+        }, 5000);
+      }
+      var modal13 = document.getElementById("myModal13");
+  
+
+  function showModal13() {
+      modal13.style.display = "block";
+  }
+ 
+  function dismiss13() {
+      fourteenthModal()
+    modal13.style.display = "none";
+  }
+
+  /******************************************************************************************************************************* */
+
+  //The fourteenth
+
+  function fourteenthModal(){
+      setTimeout(() => {
+          showModal14()
+      
+          
+        }, 5000);
+      }
+  var modal14 = document.getElementById("myModal14");
+  var modal15 = document.getElementById("myModal15");
+  
+
+  function showModal14() {
+      modal14.style.display = "block";
+  }
+  function dismiss14() {
+    modal14.style.display = "none";
+    setTimeout(() => {
+      modal15.style.display = "block";
+  
+      
+    }, 3000);
+  }

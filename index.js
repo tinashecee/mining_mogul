@@ -456,4 +456,13 @@ app.get('/simulation-level-onee',async (req,res) =>{
 app.get('/simulation-level-two',async (req,res) =>{
     res.render('simulation_level_two',{layout:'./layouts/main'});
 });
+app.get('/simulation-level-three',async (req,res) =>{
+    res.render('simulation_level_three',{layout:'./layouts/main'});
+});
+app.get('/refinement-stage',async (req,res) =>{
+    res.render('refinement_stage',{layout:'./layouts/main'});
+});
+app.get('/simulation-level-four',async (req,res) =>{
+    res.render('simulation_level_four',{layout:'./layouts/main'});
+});
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
