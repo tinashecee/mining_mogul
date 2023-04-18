@@ -465,4 +465,13 @@ app.get('/refinement-stage',async (req,res) =>{
 app.get('/simulation-level-four',async (req,res) =>{
     res.render('simulation_level_four',{layout:'./layouts/main'});
 });
+app.get('/alternative-sales-channels',async (req,res) =>{
+    res.render('alternative_sales_channels',{layout:'./layouts/main'});
+});
+app.get('/mmcz-selection',async (req,res) =>{
+    res.render('mmcz_selection',{layout:'./layouts/main'});
+});
+app.get('/results',async (req,res) =>{
+    res.render('results',{layout:'./layouts/main'});
+});
 app.listen(PORT, console.log(`Server running on port ${PORT}`));

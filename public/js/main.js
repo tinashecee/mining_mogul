@@ -292,3 +292,151 @@ function eleventhModal(){
       
     }, 3000);
   }
+
+
+  /******************Level 4********************************Level 4********************************************Level 4*****************/
+   //
+
+  
+/************************************************************************************************************************************ */
+  //
+
+  function aModal(){
+      setTimeout(() => {
+          showModalA()
+      
+          
+        }, 5000);
+      }
+      var modalA = document.getElementById("myModalA");
+  
+
+  function showModalA() {
+      modalA.style.display = "block";
+  }
+  function dismissA() {
+      bModal()
+    modalA.style.display = "none";
+  }
+
+  /******************************************************************************************************************************* */
+
+  //The thirteen modal 
+
+  function bModal(){
+      setTimeout(() => {
+          showModalB()
+      
+          
+        }, 5000);
+      }
+      var modalB = document.getElementById("myModalB");
+  
+
+  function showModalB() {
+      modalB.style.display = "block";
+  }
+ 
+  function dismissB() {
+      cModal()
+    modalB.style.display = "none";
+  }
+
+  /******************************************************************************************************************************* */
+
+  //The fourteenth
+
+  function cModal(){
+      setTimeout(() => {
+          showModalC()
+      
+          
+        }, 5000);
+      }
+  var modalC = document.getElementById("myModalC");
+  var modalD = document.getElementById("myModalD");
+  
+
+  function showModalC() {
+      modalC.style.display = "block";
+  }
+  function dismissC() {
+    modalC.style.display = "none";
+    setTimeout(() => {
+      modalD.style.display = "block";
+  
+      
+    }, 3000);
+  }
+
+
+/************************************************************************************************************************************ */
+  //
+
+  function eModal(){
+    setTimeout(() => {
+        showModalE()
+    
+        
+      }, 5000);
+    }
+    var modalE = document.getElementById("myModalE");
+
+
+function showModalE() {
+    modalE.style.display = "block";
+}
+function dismissE() {
+    fModal()
+  modalE.style.display = "none";
+}
+
+/******************************************************************************************************************************* */
+
+//The thirteen modal 
+
+function fModal(){
+    setTimeout(() => {
+        showModalF()
+    
+        
+      }, 5000);
+    }
+    var modalF = document.getElementById("myModalF");
+
+
+function showModalF() {
+    modalF.style.display = "block";
+}
+
+function dismissF() {
+    GModal()
+  modalF.style.display = "none";
+}
+
+/******************************************************************************************************************************* */
+
+//The fourteenth
+
+function GModal(){
+    setTimeout(() => {
+        showModalG()
+    
+        
+      }, 5000);
+    }
+var modalG = document.getElementById("myModalG");
+var modalH = document.getElementById("myModalH");
+
+
+function showModalG() {
+    modalG.style.display = "block";
+}
+function dismissG() {
+  modalG.style.display = "none";
+  setTimeout(() => {
+    modalH.style.display = "block";
+
+    
+  }, 3000);
+}  
