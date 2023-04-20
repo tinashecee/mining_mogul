@@ -28,7 +28,7 @@
                         <h2 class="text-center mb-4">Select land to mine</h2>
                         <form action="/add/exploration" method="POST">
                           <div class="mb-3">
-                            <label for="mineralSelect" class="form-label">Area</label>
+                            <label for="mineralSelect" class="form-label">Location</label>
                             <select class="form-select" name="location" id="mineralSelect">
                               <option selected  disabled>Select a province</option>
                               <option value="Harare">Harare   |  @$10 per square metre</option>
@@ -84,7 +84,16 @@
     </div>
 
   </div>
-
+  <div class="dialogue-box">
+    <div class="assistant-image">
+      <img src="/assets/media/tembyy.png" alt="Assistant" />
+    </div>
+    <div class="assistant-message">
+      <span class="typing"></span>
+      <span id="message"></span>
+    </div>
+  </div>
+  <audio id="audio" src="./tembyy.mp3" preload="auto"></audio>
 </div>
 <svg class="hidden" hidden>
   <symbol id="icon-arrow-left" viewBox="0 0 32 32">

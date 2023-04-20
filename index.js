@@ -21,6 +21,11 @@ let employeess=require("./public/assets/data/employeess.json")
 app.use(express.static('./public'));
 app.use(bodyParser.urlencoded({extended:false}));
 app.use(bodyParser.json())
+app.use("/css",express.static("./"));
+app.use("/js",express.static("./node_modules/video.js/dist"));
+app.use("/",express.static("./node_modules/video.js/dist"));
+app.use("/css",express.static("./node_modules/video.js/dist"));
+
 app.use("/css",express.static("./node_modules/bootstrap/dist/css"));
 app.use("/js",express.static("./node_modules/bootstrap/dist/js"));
 //or
@@ -454,6 +459,10 @@ app.post("/simulation-level-one", async (req,res) => {
     res.render('mineral_selection',{layout:'./layouts/mineral-selection-layout',name:"currentUser.name",
         account_balance:0});
 });
+app.post('/mineral-selection',async (req,res) =>{
+    res.render('mineral_selection',{layout:'./layouts/mineral-selection-layout',name:"currentUser.name",
+        account_balance:0});
+});
 app.get('/land-selection',async (req,res) =>{
     res.render('land_selection',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
         account_balance:0});
@@ -475,7 +484,7 @@ app.get('/mining-process-selection',async (req,res) =>{
         account_balance:0});
 });
 app.get('/equipment-selection',async (req,res) =>{
-    res.render('equipment_process.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
+    res.render('equipment_selection.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
         account_balance:0});
 });
 app.get('/employee-selection',async (req,res) =>{

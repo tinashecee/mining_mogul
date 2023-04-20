@@ -56,8 +56,8 @@ a {
 
 .content {
   height: 600px;
-  margin: auto;
-  width: 100%;
+  margin: 0 auto;
+  width: 80%;
   max-width: 1050px;
   display: flex;
   align-items: center;
