@@ -51,3 +51,5 @@ var swiper = new Swiper('.product-slider', {
     $(".js-fav").on("click", function() {
         $(this).find('.heart').toggleClass("is-active");
     });
+
+    

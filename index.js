@@ -491,7 +491,10 @@ app.get('/employee-selection',async (req,res) =>{
     res.render('employees_selection.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
         account_balance:0});
 });
-
+app.get('/simulation',async (req,res) =>{
+    res.render('simulation_level_one.ejs',{layout:'./layouts/simulation-layout',name:"currentUser.name",
+        account_balance:0});
+});
 
 app.get('/simulation-level-onee',async (req,res) =>{
     res.render('simulation_level_one',{layout:'./layouts/main'});
