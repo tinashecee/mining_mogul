@@ -10,10 +10,12 @@ document.getElementById("tap").addEventListener("click",(e)=>{
     let y = e.clientY 
     let vvalue = document.getElementById("inp")
     let ele = document.createElement("span")
+    let ores = document.getElementById("ores")
     ele.innerHTML = "+"+document.getElementById("step").value
     let anime = ele
     animation1(x,y,anime,ele)
     some(vvalue,stepv)
+   
     firstModal(vvalue)
 })
 function log(valor){
@@ -36,10 +38,18 @@ function animation1(x,y,anime,ele)
 }
 function some(ele,stv){
     let valor = parseFloat(ele.value)
+    console.log(valor+1)
     if ((valor+stv)<10&&(valor+stv)>=1) {
         ele.value = "0"+(valor+stv)
     }else{ele.value = valor+stv}
    
+}
+function some1(ele,stv){
+  let valor = parseFloat(ele.value)
+  if ((valor+stv)<10&&(valor+stv)>=1) {
+      ele.value = "0"+(valor+stv)
+  }else{ele.value = valor+stv}
+ 
 }
 function deleteSelf(me){
     setTimeout(()=>{me.parentNode.removeChild(me);},1000)
@@ -82,7 +92,7 @@ function firstModal(){
         showModal1()
         startIntro1()
         
-      }, 5000);
+      }, 10000);
     }
 
     }
@@ -129,7 +139,8 @@ function firstModal(){
     
 
     function startIntro1(){
-  
+      var x = document.getElementById("myVideo1"); 
+      x.play();
         labour_vid.style.display = "block";
       }
       function startIntro2(){

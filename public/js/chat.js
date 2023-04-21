@@ -1,11 +1,15 @@
+
+var bt = document.getElementById('tap');
+bt.disabled = true;
 const messageElement = document.getElementById("message");
       const audioElement = document.getElementById("audio");
       const message =
-        "Great!  You've kicked off your mining adventure and are on the fast track to becoming a true Mineral Tycoon!  To stay ahead of the game and boost your mineral haul, it's time to invest in some cutting-edge technology!  So, what will it be, future tycoon? Pick your favorite equipment and gadgets to skyrocket your mining empire! ";
+        "Are you ready to start mining? Tap the screen to increase your ore and watch as your mining operations take off! With each tap, you'll collect more minerals and move closer to becoming the ultimate Mineral Tycoon. Remember throughout the game you are going to face different obstacles in your quest. Take decisive and calculated actions . So let's see how far you can go!";
       let index = 0;
 
 
       function typeMessage() {
+        
         if (index < message.length) {
           messageElement.innerHTML += message[index];
           index++;
@@ -19,17 +23,23 @@ const messageElement = document.getElementById("message");
       typeMessage();
       // ...
       function typeMessage() {
+        var x = document.getElementById("myAudio"); 
+         //x.play();
+         
         if (index < message.length) {
           messageElement.innerHTML += message[index];
           index++;
-          setTimeout(typeMessage, 50);
+          setTimeout(typeMessage, 120);
         } else {
+          bt.disabled = false;
+
           fadeOutDialogueBox();
         }
       }
 
 
       typeMessage();
+
 
 
       function fadeOutDialogueBox() {

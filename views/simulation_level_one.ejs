@@ -7,9 +7,6 @@
         <span class="day-name">Level</span>
         <span class="day-name">Balance</span>
         <span class="date-number">00</span>
-       
-        <span class="day-name">Ore(Tonnes)</span>
-        <span class="date-number">00</span>
       </div>
     </div>
     <div class="content">
@@ -20,7 +17,7 @@
             <input type="text"  name="" id="inp" value="00">	   
           </div>
             <div id="key">
-                <button id="tap" ><img src="/assets/media/pick (1).png"></button> <br>
+                <button id="tap" disabled ><img src="/assets/media/pick (1).png"></button> <br>
                 <div id="config" style="height:0 ;display: none;">
                     <input type="number" id="step" value="1">
                 </div>
@@ -37,7 +34,9 @@
         <span id="message"></span>
       </div>
     </div>
-    <audio id="audio" src="./tembyy.mp3" preload="auto"></audio>
+    <audio id="myAudio" autoplay>
+      <source src="/assets/media/simulation-intro.mp3" type="audio/mpeg">
+    </audio>
   </div>
   <svg class="hidden" hidden>
     <symbol id="icon-arrow-left" viewBox="0 0 32 32">
@@ -61,7 +60,7 @@
               height: 100%;
               width: 100%;
               overflow: hidden;">
-                <video id="myVideo1" src="/assets/media/labour dispute.mp4" autoplay controls></video>
+                <video id="myVideo1" src="/assets/media/labour dispute.mp4"  controls></video>
               </div>
             </div>
     
@@ -95,7 +94,7 @@
   <div id="myModal2" class="modal">
   
       <!-- Modal content -->
-      <div id="env-video" style="height: 100vh;">
+      <div id="env-vid" style="height: 100vh;">
         <div  class="container-fluid" style="background-color: #0f2323;">
           <div style="display: flex;
           align-items: center;
@@ -103,7 +102,7 @@
           height: 100%;
           width: 100%;
           overflow: hidden;">
-            <video id="myVideo2" src="/assets/media/environment options.mp4" autoplay controls></video>
+            <video id="myVideo2" src="/assets/media/environment options.mp4" controls></video>
           </div>
         </div>
 
