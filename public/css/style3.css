@@ -908,7 +908,7 @@ input[type=number]::-webkit-inner-spin-button {
 .contain-fluid{
   margin: auto;
     padding: auto;
-    width: 900px;
+    width: 100%;
   
 }
 .radiogroup {

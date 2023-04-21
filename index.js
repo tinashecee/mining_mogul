@@ -520,4 +520,7 @@ app.get('/mmcz-selection',async (req,res) =>{
 app.get('/results',async (req,res) =>{
     res.render('results',{layout:'./layouts/main'});
 });
+app.get('/alternative',async (req,res) =>{
+    res.render('alternative_sales_channels',{layout:'./layouts/simulation-layout'});
+});
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
