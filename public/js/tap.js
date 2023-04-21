@@ -3,20 +3,26 @@ let countNm = 1
 var labour_vid = document.getElementById("labour-vid");
 var env_vid = document.getElementById("env-vid");
 labour_vid.style.display = "none";
+var paused = true;
+
+let vvalue = document.getElementById("inp")
+let tripp = document.getElementById("yeild")
+let ele = document.createElement("span")
+let ores = document.getElementById("ores")
+let count=0
+let started= false
 document.getElementById("tap").addEventListener("click",(e)=>{
 	let gg  = document.getElementById("step").value
    	stepv =  parseFloat(gg)
 	let x = e.clientX
     let y = e.clientY 
-    let vvalue = document.getElementById("inp")
-    let ele = document.createElement("span")
-    let ores = document.getElementById("ores")
+    count+=1
     ele.innerHTML = "+"+document.getElementById("step").value
     let anime = ele
     animation1(x,y,anime,ele)
     some(vvalue,stepv)
    
-    firstModal(vvalue)
+    firstModal()
 })
 function log(valor){
     console.log(valor)
@@ -38,7 +44,6 @@ function animation1(x,y,anime,ele)
 }
 function some(ele,stv){
     let valor = parseFloat(ele.value)
-    console.log(valor+1)
     if ((valor+stv)<10&&(valor+stv)>=1) {
         ele.value = "0"+(valor+stv)
     }else{ele.value = valor+stv}
@@ -86,9 +91,10 @@ function stepy(inst)
 function firstModal(){
     
     if(countNm == 1){
-      console.log(countNm)
+      paused = false;
         countNm+=1
     setTimeout(() => {
+        paused = true
         showModal1()
         startIntro1()
         
@@ -108,6 +114,7 @@ function firstModal(){
     }
     // When the user clicks on <span> (x), close the modal
     function dismiss1() {
+      paused = false
       console.log(document.querySelector('input[name="labour"]:checked').value)
         secondModal()
       modal1.style.display = "none";
@@ -118,18 +125,21 @@ function firstModal(){
 
     function secondModal(){
         setTimeout(() => {
+            paused=true
             showModal2()
             startIntro2()
             
-          }, 5000);
+          }, 10000);
         }
         var modal2 = document.getElementById("myModal2");
-    
+        var modal3 = document.getElementById("myModal3");
 
     function showModal2() {
         modal2.style.display = "block";
     }
     function dismiss2() {
+      done()
+      paused=false
       console.log(document.querySelector('input[name="environment"]:checked').value)
       modal2.style.display = "none";
     }
@@ -155,5 +165,30 @@ function firstModal(){
           function myHandler2(e) {
             env_vid.style.display = "none";
           }
+          function done(){
+            setTimeout(() => {
+              modal3.style.display = "block";
+              tripp.innerHTML=count
+              
+            }, 5000);
+          }
 
+          function cntDown() {
+            count1=90
+            let sec = 60;
+            const el = document.getElementById("timer");
+            const timer = setInterval(() => {
+              if(!paused) {
+              el.innerHTML = (count1--)+2
 
+              console.log(count1--)
+              if (count1 = 0) {
+                //clearInterval(timer);
+              modal3.style.display = "block";
+              tripp.innerHTML=count
+            }
+              }
+            }, 1000);
+          }
+          
+          

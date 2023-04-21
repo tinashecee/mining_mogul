@@ -48,3 +48,6 @@ const messageElement = document.getElementById("message");
           dialogueBox.classList.add("fade-out");
         }, 1000); // Adjust the delay before the fade-out animation starts
       }
+
+         
+    

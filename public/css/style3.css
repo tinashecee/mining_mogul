@@ -761,7 +761,7 @@ a {
     margin-top: 10px;
     margin-left: auto;
     margin-right: auto;
-    width: 300px;
+    width: 400px;
     background: rgba(255, 255, 255, 0.1);
     border-radius: var(--rborder);
     text-align: center;
@@ -774,15 +774,15 @@ a {
     pointer-events: none;
     text-align: center;
     background-color: rgba(0, 0, 0, 0);
-    width: 300px;
+    width: 400px;
     border: none;
     outline: none;
     color: var(--color3);
     font-size: 70px;
 }
 #tap{
-    width: 230px;
-    height: 200px;
+    width: 330px;
+    height: 300px;
     border-radius: var(--rborder);
     border: none;
     background-color: var(--color2);
@@ -908,6 +908,7 @@ input[type=number]::-webkit-inner-spin-button {
 .contain-fluid{
   margin: auto;
     padding: auto;
+    width: 900px;
   
 }
 .radiogroup {
@@ -1001,4 +1002,27 @@ input[type=number]::-webkit-inner-spin-button {
 
 .label:hover .text {
   opacity: 1;
+}
+#container {
+	color: #144c7c;
+	display: flex;
+  background: #edb639;
+  border-radius: var(--rborder);
+	justify-content: center;
+	align-items: center;
+	overflow: hidden;
+  position: absolute;
+  top:5%;
+  left:90%;
+}
+
+#countdown {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 56px;
+	font-family: "Comfortaa", cursive;
+	overflow: hidden;
 }
