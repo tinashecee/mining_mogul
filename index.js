@@ -447,7 +447,7 @@ app.get('/simulation-level-four',async (req,res) =>{
 app.get('/alternative-sales-channels',async (req,res) =>{
     res.render('alternative_sales_channels',{layout:'./layouts/simulation-layout'});
 });
-app.get('/mmcz-selection',async (req,res) =>{
+app.get('/mmcz',async (req,res) =>{
     res.render('mmcz_selection',{layout:'./layouts/mmcz-layout'});
 });
 app.get('/results',async (req,res) =>{

@@ -29,7 +29,7 @@
                         <form action="/add/permits" method="POST">
                           <div class="mb-3">
                             <label for="mineralSelect" class="form-label">Location</label>
-                            <select class="form-select" name="location" id="mineralSelect">
+                            <select class="form-select" required name="location" id="mineralSelect">
                               <option selected  disabled>Select a province</option>
                               <option value="Harare">Harare   |  @$10 per square metre</option>
                               <option value="Masvingo">Masvingo  |  @$10 per square metre</option>
@@ -47,7 +47,7 @@
                           <br>
                           <div class="mb-3">
                             <label for="mineralDetails" class="form-label">Size</label>
-                                <input type="range" name="size" class="form-range" id="size-range" min="1000" max="100000" step="1000">
+                                <input type="range" name="size" class="form-range" required id="size-range" min="1000" max="100000" step="1000">
                                 <p>Value: <span id="demo"></span> square metres</p>
                           </div>
                 
@@ -108,38 +108,5 @@
  
  
  
- <!-- Main content 
- <div class="container mt-5">
-    <div class="row">
-      <div class="col-md-6 offset-md-3">
-        <h2 class="text-center mb-4">Select land to mine</h2>
-        <form action="/add/permits" method="POST">
-          <div class="mb-3">
-            <label for="mineralSelect" class="form-label">Area</label>
-            <select class="form-select" name="location" id="mineralSelect">
-              <option selected  disabled>Select a province</option>
-              <option value="Harare">Harare   |  @$10 per square metre</option>
-              <option value="Masvingo">Masvingo  |  @$10 per square metre</option>
-              <option value="Bulawayo">Bulawayo  |  @$10 per square metre</option>
-              <option value="Matebeleland North">Matebeleland North  |  @$10 per square metre</option>
-              <option value="Matebeleland South">Matebeleland South  |  @$10 per square metre</option>
-              <option value="Mashonaland West">Mashonaland West  |  @$10 per square metre</option>
-              <option value="Mashonaland East">Mashonaland East  |  @$10 per square metre</option>
-              <option value="Mashonaland Central">Mashonaland Central  |  @$10 per square metre</option>
-              <option value="Manicaland">Manicaland  |  @$10 per square metre</option>
-              <option value="Midlands">Midlands  |  @$10 per square metre</option>
-            </select>
-          </div>
-          <div class="mb-3">
-            <label for="mineralDetails" class="form-label">Size</label>
-                <input type="range" name="size" class="form-range" id="size-range" min="1000" max="100000" step="1000">
-                <p>Value: <span id="demo"></span> square metres</p>
-          </div>
-
-          <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-      </div>
-    </div>
-  </div>
--->
+ 
 </div>

@@ -1,6 +1,7 @@
 let stepv = 1
 let countNm = 1
 var labour_vid = document.getElementById("labour-vid");
+var labour1_vid = document.getElementById("labour1-vid");
 var env_vid = document.getElementById("env-vid");
 labour_vid.style.display = "none";
 var paused = true;
@@ -12,6 +13,7 @@ let ores = document.getElementById("ores")
 let count=0
 let started= false
 var modal1 = document.getElementById("myModal1");
+var modal1a = document.getElementById("myModal1a");
 var modal2 = document.getElementById("myModal2");
 var modal3 = document.getElementById("myModal3");
 document.getElementById("tap").addEventListener("click",(e)=>{
@@ -118,8 +120,9 @@ function firstModal(){
     function dismiss1() {
       paused = false
       console.log(document.querySelector('input[name="labour"]:checked').value)
-        secondModal()
+        
       modal1.style.display = "none";
+      modal1a.style.display = "block";
     }
     
 /************************************************************************************************************************************ */
@@ -165,6 +168,11 @@ function firstModal(){
           document.getElementById('myVideo2').addEventListener('ended',myHandler2,false);
           function myHandler2(e) {
             env_vid.style.display = "none";
+          }
+          document.getElementById('myVideo1a').addEventListener('ended',myHandler2,false);
+          function myHandler2(e) {
+            modal1a.style.display = "none";
+            secondModal()
           }
           function done(){
             
