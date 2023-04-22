@@ -472,7 +472,7 @@ app.get('/exploration-selection',async (req,res) =>{
         account_balance:0});
 });
 app.get('/permits-selection',async (req,res) =>{
-    res.render('permits_selection.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
+    res.render('permits_selection.ejs',{layout:'./layouts/permit-selection-layout',name:"currentUser.name",
         account_balance:0});
 });
 app.get('/infrastructure-selection',async (req,res) =>{
@@ -484,7 +484,7 @@ app.get('/mining-process-selection',async (req,res) =>{
         account_balance:0});
 });
 app.get('/equipment-selection',async (req,res) =>{
-    res.render('equipment_selection.ejs',{layout:'./layouts/land-selection-layout',name:"currentUser.name",
+    res.render('equipment_selection.ejs',{layout:'./layouts/equipment-selection-layout',name:"currentUser.name",
         account_balance:0});
 });
 app.get('/employee-selection',async (req,res) =>{
@@ -512,10 +512,10 @@ app.get('/simulation-level-four',async (req,res) =>{
     res.render('simulation_level_four',{layout:'./layouts/main'});
 });
 app.get('/alternative-sales-channels',async (req,res) =>{
-    res.render('alternative_sales_channels',{layout:'./layouts/main'});
+    res.render('alternative_sales_channels',{layout:'./layouts/simulation-layout'});
 });
 app.get('/mmcz-selection',async (req,res) =>{
-    res.render('mmcz_selection',{layout:'./layouts/main'});
+    res.render('mmcz_selection',{layout:'./layouts/mmcz-layout'});
 });
 app.get('/results',async (req,res) =>{
     res.render('results',{layout:'./layouts/main'});

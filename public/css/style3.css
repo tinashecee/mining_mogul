@@ -65,7 +65,7 @@ a {
 }
 
 .content {
-  height: 600px;
+  height: 650px;
   margin: 0 auto;
   width: 80%;
   max-width: 1050px;
@@ -1025,4 +1025,20 @@ input[type=number]::-webkit-inner-spin-button {
 	font-size: 56px;
 	font-family: "Comfortaa", cursive;
 	overflow: hidden;
+}
+.fcc-btn {
+  background-color: #edb639;
+  color: #223094;
+  padding: 15px 25px;
+  text-decoration: none;
+  box-shadow: 0px 30px 139px 0px rgba(10, 22, 31, 0.26);
+  border-radius: 30px;
+  font-weight: 600;
+  width: 100%;
+  
+}
+
+.fcc-btn:hover {
+  background-color: #223094;
+  color:#edb639;
 }

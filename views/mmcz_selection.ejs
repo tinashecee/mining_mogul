@@ -1,164 +1,170 @@
-<h3> MMCZ Partnership: Boost Your Profits with a Powerful Ally!   |    level 4</h3>
-<button id="btn" onclick="eModal()">Start</button>
-
-<!-- 2.	Equipment Maintenance The Modal -->
-<div id="myModalE" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <!-- Modal header -->
-        <div class="modal-header">
-            <h4 class="modal-title">MMCZ Requirements:</h4>
+<div style="height: 100vh;overflow: hidden;">
+    <!-- partial:index.partial.html -->
+    <div class="wrapper">
+      <div class="calendar">
+        <div class="calendar-body">
+          <span class="month-name">Username</span>
+          <span class="day-name">Level</span>
+          <span class="day-name">Balance</span>
+          <span class="date-number">00</span>
         </div>
-        <!-- Modal body -->
-        <div class="modal-body">
-            <form id="investment-form">
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="investment-option1" value="1">
-                       $5000
-                    </label>
-                    <br>
-                    <p>
-                        1.	Producer/Miner contact details
-                        </p>
-                    <br>
-                    <p>
-                        2.	Claims registration certificates
-                        </p>
-                    <br>
-                    <br>
-                    <p>3.	Company registration documents
-                    </p>
-                    <br>
-                    <p>
-                        4.	Customer details for that specific producer 
-                        -these are used when drafting sales contracts
-                    </p>
-                    <br>
-                    <p>
-                        5.	ZIMRA BPN number
-                    </p>
-                    <br>
-                    <p>
-                        6.	Letter of authorization
-                        -written to the producer’s bankers enabling the bank to deduct commissions and taxes
-                         </p>
-                        <br>
-                    </div>   
-                </div>
-            </form>
-        </div>
-        <!-- Modal footer -->
-        <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" onclick="dismissG()" id="submit-button">Sell Locally</button>
-            <button type="button" class="btn btn-primary" onclick="dismissE()" data-dismiss="modal">Sell internationally</button>
-        </div>
-    </div>
-  
-  </div>  
-<!-- 1.	Tech Investment Stage The Modal -->
-<div id="myModalF" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <!-- Modal header -->
-        <div class="modal-header">
-            <h4 class="modal-title">Mineral Export Registration Requirements:</h4>
-        </div>
-        <!-- Modal body -->
-        <div class="modal-body">
-            <form id="investment-form">
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="investment-option1" value="1">
-                       $5000
-                    </label>
-                    <br>
-                    <p>
-                        1. Register as a mineral exporter with RBZ
-                        -this is done through your bank
-                        </p>
-                    <br>
-                    <p>
-                        2. Register as a mineral exporter with ZIMRA
-                        -an account for clearance fees is opened with ZIMRA
-                        </p>
-                    <br>
-                    <p>3. Export authorization from MMMD where required by law</p>
-                    <br>
-                    <p>4. Export permit</p>
-                    <br>
-                    <p>5. Sales agreements/contracts
-                        -these involve MMCZ, the producer and the customer and contain the terms and conditions of sale i.e. product, quantity, price, basis, delivery and payment terms
-                        </p>
-                    <br>
+      </div>
+      <div class="content">
+        <div class="product-slider">
+          <div class="product-slider__wrp swiper-wrapper">
+            <div class="product-slider__item swiper-slide" data-target="img4">
+              <div class="product-slider__card">
+                <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405223/starwars/item-4-bg.webp" alt="star wars" class="product-slider__cover">
+                <div class="product-slider__content">
+                  <div class="product-ctr">
+                    <div class="product-labels">
+                      <div class="container mt-5">
+                        <div class="row">
+                          <div class="col-md-6 offset-md-3">
+                            <h2 class="text-center mb-4">MMCZ Partnership: Boost Your Profits with a Powerful Ally!</h2>
+                            <div id="first-section" class="form-group">
+                              <label>
+                                <input type="checkbox" name="option1" value="MMCZ Requirements"> MMCZ Requirements: $5000 </label>
+                              <br>
+                              <p> 1. Producer/Miner contact details </p>
+                              <p> 2. Claims registration certificates </p>
+                              <p>3. Company registration documents </p>
+                              <p> 4. Customer details for that specific producer -these are used when drafting sales contracts </p>
+                              <p> 5. ZIMRA BPN number </p>
+                              <p> 6. Letter of authorization -written to the producer’s bankers enabling the bank to deduct commissions and taxes </p>
+                            </div>
+                            <div id="second-section" class="form-group">
+                              <label>
+                                <input type="checkbox" name="option2" value="Mineral Export Registration Requirements"> Mineral Export Registration Requirements: $5000 </label>
+                              <br>
+                              <p> 1. Register as a mineral exporter with RBZ -this is done through your bank </p>
+                              <p> 2. Register as a mineral exporter with ZIMRA -an account for clearance fees is opened with ZIMRA </p>
+                              <p>3. Export authorization from MMMD where required by law</p>
+                              <p>4. Export permit</p>
+                              <p>5. Sales agreements/contracts -these involve MMCZ, the producer and the customer and contain the terms and conditions of sale i.e. product, quantity, price, basis, delivery and payment terms </p>
+                    
+                            </div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-            </form>
+                  </div>
+                  <div class="product-slider__bottom">
+                    <button id="ta" disabled onclick="next()" class="product-slider__cart"> SUBMIT </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <!-- Modal footer -->
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="dismissF()" id="submit-button">Submit</button>
-            <button type="button" class="btn btn-secondary" onclick="dismissF()" data-dismiss="modal">Cancel</button>
+      </div>
+      <div class="dialogue-box">
+        <div class="assistant-image">
+          <img src="/assets/media/tembyy.png" alt="Assistant" />
         </div>
+        <div class="assistant-message">
+          <span class="typing"></span>
+          <span id="message"></span>
+        </div>
+      </div>
+      <audio id="myAudio" autoplay>
+        <source src="/assets/media/simulation-intro.mp3" type="audio/mpeg">
+      </audio>
     </div>
-  
+    <svg class="hidden" hidden>
+      <symbol id="icon-arrow-left" viewBox="0 0 32 32">
+        <path d="M0.704 17.696l9.856 9.856c0.896 0.896 2.432 0.896 3.328 0s0.896-2.432 0-3.328l-5.792-5.856h21.568c1.312 0 2.368-1.056 2.368-2.368s-1.056-2.368-2.368-2.368h-21.568l5.824-5.824c0.896-0.896 0.896-2.432 0-3.328-0.48-0.48-1.088-0.704-1.696-0.704s-1.216 0.224-1.696 0.704l-9.824 9.824c-0.448 0.448-0.704 1.056-0.704 1.696s0.224 1.248 0.704 1.696z"></path>
+      </symbol>
+      <symbol id="icon-arrow-right" viewBox="0 0 32 32">
+        <path d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
+      </symbol>
+    </svg>
+    <!-- 1.	Tech Investment Stage The Modal -->
+    <div id="myModal1" class="modal" style="height: 100vh;">
+      <!-- Modal content -->
+      <div id="labour-vid" style="height: 100vh;">
+        <div class="container-fluid" style="background-color: #0f2323;">
+          <div style="display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;">
+            <video id="myVideo1" src="/assets/media/labour dispute.mp4" controls></video>
+          </div>
+        </div>
+      </div>
+      <div class="centered">
+        <div id="investment-form" class="contain-fluid">
+          <div class="radiogroup">
+            <div class="wrapper1">
+              <input class="state" type="radio" name="labour" id="a" value="Negotiate finding a compromise">
+              <label class="label" for="a">
+                <div class="indicator"></div>
+                <span class="text">Negotiate finding a compromise: $90000</span>
+              </label>
+            </div>
+            <div class="wrapper1">
+              <input class="state" type="radio" name="labour" id="b" value="Offer 5% increment instead on 40%">
+              <label class="label" for="b">
+                <div class="indicator"></div>
+                <span class="text">Offer 5% increment instead on 40%: $115000</span>
+              </label>
+            </div>
+          </div>
+          <button id="tap" disabled onclick="dismiss1()" class="product-slider__cart"> SELECT </button>
+        </div>
+      </div>
+    </div>
+    <!-- 2.	Equipment Maintenance The Modal -->
+    <div id="myModal2" class="modal">
+      <!-- Modal content -->
+      <div id="env-vid" style="height: 100vh;">
+        <div class="container-fluid" style="background-color: #0f2323;">
+          <div style="display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;">
+            <video id="myVideo2" src="/assets/media/environment options.mp4" controls></video>
+          </div>
+        </div>
+      </div>
+      <div class="centered">
+        <div id="investment-form" class="contain-fluid">
+          <div class="radiogroup">
+            <div class="wrapper1">
+              <input class="state" type="radio" name="environment" id="c" value="Water Guardians">
+              <label class="label" for="c">
+                <div class="indicator"></div>
+                <span class="text">Water Guardians: $1000</span>
+              </label>
+            </div>
+            <div class="wrapper1">
+              <input class="state" type="radio" name="environment" id="d" value="Habitat Heroes">
+              <label class="label" for="d">
+                <div class="indicator"></div>
+                <span class="text">Habitat Heroes: $115000</span>
+              </label>
+            </div>
+            <div class="wrapper1">
+              <input class="state" type="radio" name="environment" id="e" value="Waste Wizards">
+              <label class="label" for="e">
+                <div class="indicator"></div>
+                <span class="text">Waste Wizards: $115000</span>
+              </label>
+            </div>
+            <div class="wrapper1">
+              <input class="state" type="radio" name="environment" id="f" value="Reforestation Rockstars">
+              <label class="label" for="f">
+                <div class="indicator"></div>
+                <span class="text">Reforestation Rockstars: $115000</span>
+              </label>
+            </div>
+          </div>
+          <button onclick="dismiss2()" class="product-slider__cart"> SELECT </button>
+        </div>
+      </div>
+    </div>
   </div>
-
-
-
-
-<!-- 3 Congratulations! Here are a list of your MMCZ Export Documents -->
-<div id="myModalG" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <!-- Modal header -->
-        <div class="modal-header">
-            <h4 class="modal-title">Congratulations! Here are a list of your MMCZ Export Documents :</h4>
-        </div>
-        <!-- Modal body -->
-        <div class="modal-body">
-            <p>1.	CD1</p>
-            <br>
-            <p>2.	Invoice</p>
-            <br>
-            <p>3.	Bill of Entry</p>
-            <br>
-            <p>4.	Release order</p>
-            <br>
-            <p>5.	Consignment note</p>
-            <br>
-        </div>
-           
-        </div>
-        <!-- Modal footer -->
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary" onclick="dismissG()" id="submit-button">Proceed To Sell</button>
-        </div>
-    </div>
-  
-  </div>    
-
-  
-
- <!--5. the next level modal The Modal -->
- <div id="myModalH" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <!-- Modal header -->
-        <div class="modal-header">
-            <h4 class="modal-title">Congratulations Game Complete. You can proceed to see your results</h4>
-        </div>
-        <!-- Modal body -->
-        <div class="modal-body">
-            
-        </div>
-        <!-- Modal footer -->
-        <div class="modal-footer">
-           <a type="button" class="btn btn-secondary" href="/results">See your Results</a>
-        </div>
-    </div>
-  
-  </div>   

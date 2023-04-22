@@ -11,6 +11,9 @@ let ele = document.createElement("span")
 let ores = document.getElementById("ores")
 let count=0
 let started= false
+var modal1 = document.getElementById("myModal1");
+var modal2 = document.getElementById("myModal2");
+var modal3 = document.getElementById("myModal3");
 document.getElementById("tap").addEventListener("click",(e)=>{
 	let gg  = document.getElementById("step").value
    	stepv =  parseFloat(gg)
@@ -89,7 +92,7 @@ function stepy(inst)
 	}
 }
 function firstModal(){
-    
+  modal3.style.display = "block";
     if(countNm == 1){
       paused = false;
         countNm+=1
@@ -102,7 +105,7 @@ function firstModal(){
     }
 
     }
-    var modal1 = document.getElementById("myModal1");
+    
 
     
     // Get the <span> element that closes the modal
@@ -131,8 +134,7 @@ function firstModal(){
             
           }, 10000);
         }
-        var modal2 = document.getElementById("myModal2");
-        var modal3 = document.getElementById("myModal3");
+     
 
     function showModal2() {
         modal2.style.display = "block";
@@ -166,6 +168,7 @@ function firstModal(){
             env_vid.style.display = "none";
           }
           function done(){
+            
             setTimeout(() => {
               modal3.style.display = "block";
               tripp.innerHTML=count
@@ -173,22 +176,6 @@ function firstModal(){
             }, 5000);
           }
 
-          function cntDown() {
-            count1=90
-            let sec = 60;
-            const el = document.getElementById("timer");
-            const timer = setInterval(() => {
-              if(!paused) {
-              el.innerHTML = (count1--)+2
-
-              console.log(count1--)
-              if (count1 = 0) {
-                //clearInterval(timer);
-              modal3.style.display = "block";
-              tripp.innerHTML=count
-            }
-              }
-            }, 1000);
-          }
+          
           
           

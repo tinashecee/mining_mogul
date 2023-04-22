@@ -1,6 +1,6 @@
 <div style="height: 100vh;overflow: hidden;">
-<!-- partial:index.partial.html -->
-<div class="wrapper">
+  <!-- partial:index.partial.html -->
+  <div class="wrapper">
     <div class="calendar">
       <div class="calendar-body">
         <span class="month-name">Username</span>
@@ -9,22 +9,23 @@
         <span class="date-number">00</span>
       </div>
     </div>
-
     <div class="content">
-     <div class="centered">
-     
-        <div id="card"> 
+      <div class="centered">
+        <div id="card">
           <div id="display">
-            <input type="text"  name="" id="inp" value="00">	   
+            <input type="text" name="" id="inp" value="00">
           </div>
-            <div id="key">
-                <button id="tap" disabled ><img src="/assets/media/pick (1).png"></button> <br>
-                <div id="config" style="height:0 ;display: none;">
-                    <input type="number" id="step" value="1">
-                </div>
+          <div id="key">
+            <button id="tap" disabled>
+              <img src="/assets/media/pick (1).png">
+            </button>
+            <br>
+            <div id="config" style="height:0 ;display: none;">
+              <input type="number" id="step" value="1">
             </div>
-        </div>
           </div>
+        </div>
+      </div>
     </div>
     <div class="dialogue-box">
       <div class="assistant-image">
@@ -47,143 +48,157 @@
       <path d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
     </symbol>
   </svg>
-  
- 
   <!-- 1.	Tech Investment Stage The Modal -->
   <div id="myModal1" class="modal" style="height: 100vh;">
-
-      <!-- Modal content -->
-      <div id="labour-vid" style="height: 100vh;">
-            <div  class="container-fluid" style="background-color: #0f2323;">
-              <div style="display: flex;
+    <!-- Modal content -->
+    <div id="labour-vid" style="height: 100vh;">
+      <div class="container-fluid" style="background-color: #0f2323;">
+        <div style="display: flex;
               align-items: center;
               justify-content: center;
               height: 100%;
               width: 100%;
               overflow: hidden;">
-                <video id="myVideo1" src="/assets/media/labour dispute.mp4"  controls></video>
-              </div>
+          <video id="myVideo1" src="/assets/media/labour dispute.mp4" controls></video>
+        </div>
+      </div>
+    </div>
+    <div style="width: 100%;
+height: 100vh;
+min-height: 750px;
+background: url(/assets/media/bgimage.jpg) center no-repeat;
+background-size: cover;
+position: relative;
+overflow: hidden;
+
+display: flex;">
+      <div class="centered">
+        <div id="investment-form" class="contain-fluid">
+          <div class="radiogroup" style="background: rgba(255, 255, 255, 0.9);">
+            <div class="wrapper1">
+              <input class="state" type="radio" name="labour" id="a" value="Negotiate finding a compromise">
+              <label class="label" for="a">
+                <div class="indicator"></div>
+                <span class="text">Negotiate finding a compromise: $90000</span>
+              </label>
             </div>
-    
-    </div>
-    <div class="centered">
-    <div id="investment-form" class="contain-fluid">
-    <div class="radiogroup">
- 
-      <div class="wrapper1">
-        <input class="state" type="radio" name="labour" id="a" value="Negotiate finding a compromise">
-        <label class="label" for="a">
-          <div class="indicator"></div>
-          <span class="text">Negotiate finding a compromise: $90000</span>
-        </label>
-      </div>
-      <div class="wrapper1">
-        <input class="state" type="radio" name="labour" id="b" value="Offer 5% increment instead on 40%">
-        <label class="label" for="b">
-          <div class="indicator"></div>
-          <span class="text">Offer 5% increment instead on 40%: $115000</span>
-        </label>
+            <div class="wrapper1">
+              <input class="state" type="radio" name="labour" id="b" value="Offer 5% increment instead on 40%">
+              <label class="label" for="b">
+                <div class="indicator"></div>
+                <span class="text">Offer 5% increment instead on 40%: $115000</span>
+              </label>
+            </div>
+          </div>
+          <button onclick="dismiss1()" class="product-slider__cart"> SELECT </button>
+        </div>
       </div>
     </div>
-    <button onclick="dismiss1()" class="product-slider__cart">
-      SELECT
-    </button>
   </div>
-  </div>
-    </div>
   <!-- 2.	Equipment Maintenance The Modal -->
   <div id="myModal2" class="modal">
-  
-      <!-- Modal content -->
-      <div id="env-vid" style="height: 100vh;">
-        <div  class="container-fluid" style="background-color: #0f2323;">
-          <div style="display: flex;
+    <!-- Modal content -->
+    <div id="env-vid" style="height: 100vh;">
+      <div class="container-fluid" style="background-color: #0f2323;">
+        <div style="display: flex;
           align-items: center;
           justify-content: center;
           height: 100%;
           width: 100%;
           overflow: hidden;">
-            <video id="myVideo2" src="/assets/media/environment options.mp4" controls></video>
-          </div>
+          <video id="myVideo2" src="/assets/media/environment options.mp4" controls></video>
         </div>
+      </div>
+    </div>
+    <div style="width: 100%;
+        height: 100vh;
+        min-height: 750px;
+        background: url(/assets/media/bgimage.jpg) center no-repeat;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
 
-</div>
+        display: flex;">
       <div class="centered">
         <div id="investment-form" class="contain-fluid">
-        <div class="radiogroup">
-     
-          <div class="wrapper1">
-            <input class="state" type="radio" name="environment" id="c" value="Water Guardians">
-            <label class="label" for="c">
-              <div class="indicator"></div>
-              <span class="text">Water Guardians: $1000</span>
-            </label>
-          </div>
-          <div class="wrapper1">
-            <input class="state" type="radio" name="environment" id="d" value="Habitat Heroes">
-            <label class="label" for="d">
-              <div class="indicator"></div>
-              <span class="text">Habitat Heroes: $115000</span>
-            </label>
-          </div>
-          <div class="wrapper1">
-            <input class="state" type="radio" name="environment" id="e" value="Waste Wizards">
-            <label class="label" for="e">
-              <div class="indicator"></div>
-              <span class="text">Waste Wizards: $115000</span>
-            </label>
-          </div>
-          <div class="wrapper1">
-            <input class="state" type="radio" name="environment" id="f" value="Reforestation Rockstars">
-            <label class="label" for="f">
-              <div class="indicator"></div>
-              <span class="text">Reforestation Rockstars: $115000</span>
-            </label>
+          <div class="radiogroup" style="background: rgba(255, 255, 255, 0.9);">
+            <div class="centered">
+              <div id="investment-form" class="contain-fluid">
+                <div class="radiogroup">
+                  <div class="wrapper1">
+                    <input class="state" type="radio" name="environment" id="c" value="Water Guardians">
+                    <label class="label" for="c">
+                      <div class="indicator"></div>
+                      <span class="text">Water Guardians: $1000</span>
+                    </label>
+                  </div>
+                  <div class="wrapper1">
+                    <input class="state" type="radio" name="environment" id="d" value="Habitat Heroes">
+                    <label class="label" for="d">
+                      <div class="indicator"></div>
+                      <span class="text">Habitat Heroes: $115000</span>
+                    </label>
+                  </div>
+                  <div class="wrapper1">
+                    <input class="state" type="radio" name="environment" id="e" value="Waste Wizards">
+                    <label class="label" for="e">
+                      <div class="indicator"></div>
+                      <span class="text">Waste Wizards: $115000</span>
+                    </label>
+                  </div>
+                  <div class="wrapper1">
+                    <input class="state" type="radio" name="environment" id="f" value="Reforestation Rockstars">
+                    <label class="label" for="f">
+                      <div class="indicator"></div>
+                      <span class="text">Reforestation Rockstars: $115000</span>
+                    </label>
+                  </div>
+                </div>
+                <button onclick="dismiss2()" class="product-slider__cart"> SELECT </button>
+              </div>
+            </div>
           </div>
         </div>
-        <button onclick="dismiss2()" class="product-slider__cart">
-          SELECT
-        </button>
       </div>
-      </div>
-    </div>  
-    <div id="myModal3" class="modal">
-  
-      
-      <div class="centered">
-        <div  class="contain-fluid">
-        <div >
-          <h1>Congratulations</h1>
-          <br>
-          <span><h3>Your total mining yeild was :</h3><h1 style="font-size: 40px;" id="yeild"> Tonnes</h1></span>
-          <br>
-          <h3>Choose your next move from the options below</h3>
-          <br>
-          <div>
+    </div>
+  </div>  
+  <div id="myModal3" class="modal">
+    <div style="width: 100%;
+        height: 100vh;
+        min-height: 750px;
+        background: url(/assets/media/bgimage.jpg) center no-repeat;
+        background-size: cover;
+        position: relative;
+        overflow: hidden;
 
+        display: flex;">
+      <div class="centered">
+        <div class="contain-fluid">
+          <div class="radiogroup" style="background: rgba(255, 255, 255, 0.8);">
+            <h1>Congratulations</h1>
+            <span>
+              <h3>Your total mining yeild was :</h3>
+              <h1 style="font-size: 40px;" id="yeild"> Kgs</h1>
+            </span>
+            <br>
+            <h3>Choose your next move from the options below</h3>
+            <br>
+            <div style="padding: 10px;margin: 10px;width:100%">
+              <a href="/mmcz" class="fcc-btn"> Refine your ore then market and sell minerals with MMCZ </a>
+            </div>
+            <div style="padding: 10px;margin: 10px;">
+              <a href="/mmcz" class="fcc-btn"> Market and sell your unrefined ore with MMCZ </a>
+            </div>
+            <div style="padding: 10px;margin: 10px;">
+              <a href="/alternative" class="fcc-btn"> Market and sell your unrefined ore with on the market yourself </a>
+            </div>
+            <div style="padding: 10px;margin: 10px;">
+              <a href="/alternative" class="fcc-btn"> Refine your ore then market and sell minerals on the market yourself </a>
+            </div>
           </div>
+          
         </div>
-        <div style="padding: 10px;margin: 10px;width:100%">
-        <a href="/mmcz" class="product-slider__cart" >
-          Refine your ore then market and sell minerals with MMCZ
-        </a>
       </div>
-      <div style="padding: 10px;margin: 10px;">
-        <a href="/mmcz" class="product-slider__cart">
-          Market and sell your unrefined ore with MMCZ
-        </a>
-      </div>
-      <div style="padding: 10px;margin: 10px;">
-        <a href="/alternative" class="product-slider__cart">
-          Market and sell your unrefined ore with on the market yourself
-        </a>
-        </div>
-        <div style="padding: 10px;margin: 10px;">
-        <a href="/alternative" class="product-slider__cart">
-          Refine your ore then market and sell minerals on the market yourself
-        </a>
-      </div>
-      </div>
-      </div>
-    </div> 
-  </div>
+    </div>
+  </div>     
+      
