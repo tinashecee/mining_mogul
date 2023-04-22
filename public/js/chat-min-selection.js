@@ -1,7 +1,9 @@
+var bt = document.getElementById('ta');
+bt.disabled = true;
 const messageElement = document.getElementById("message");
       const audioElement = document.getElementById("audio");
       const message =
-        "Are you ready to start mining? Tap the screen to increase your ore and watch as your mining operations take off! With each tap, you'll collect more minerals and move closer to becoming the ultimate Mineral Tycoon. Remember throughout the game you are going to face different obstacles in your quest. Take decisive and calculated actions . So let's see how far you can go!";
+        "In this crucial first step, you'll need to select a mineral to focus your mining venture on. You have four enticing options: gold, platinum, diamonds, and lithium. Each mineral offers unique benefits and challenges, so choose wisely! Consider factors such as market demand, potential profits, and extraction methods as you make your decision. Your journey to becoming a mineral tycoon starts with this choice, so take your time, evaluate your options, and embark on the path to mining success!";
       let index = 0;
 
 
@@ -29,7 +31,6 @@ const messageElement = document.getElementById("message");
           setTimeout(typeMessage, 120);
         } else {
           bt.disabled = false;
-
           fadeOutDialogueBox();
         }
       }

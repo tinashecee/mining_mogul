@@ -1,7 +1,9 @@
+var bt = document.getElementById('ta');
+bt.disabled = true;
 const messageElement = document.getElementById("message");
       const audioElement = document.getElementById("audio");
       const message =
-        "Are you ready to start mining? Tap the screen to increase your ore and watch as your mining operations take off! With each tap, you'll collect more minerals and move closer to becoming the ultimate Mineral Tycoon. Remember throughout the game you are going to face different obstacles in your quest. Take decisive and calculated actions . So let's see how far you can go!";
+        "This is the Mining Process Selection Stage! Pick the most suitable method to extract your chosen mineral and maximize your venture's success. Your options include open-pit, underground, and placer mining, each offering its own unique blend of challenges and rewards. As you ponder your decision, consider factors such as efficiency, environmental impact, and safety, while also keeping an eye on costs and profitability.";
       let index = 0;
 
 
@@ -29,7 +31,6 @@ const messageElement = document.getElementById("message");
           setTimeout(typeMessage, 120);
         } else {
           bt.disabled = false;
-
           fadeOutDialogueBox();
         }
       }

@@ -1,170 +1,66 @@
-
+<div style="height: 100vh;overflow: hidden;">
 <!-- partial:index.partial.html -->
 <div class="wrapper">
-  <div class="calendar">
-    <div class="calendar-body">
-      <span class="month-name">Username</span>
-      <span class="day-name">Level</span>
-      <span class="day-name">Balance</span>
-      <span class="date-number">00</span>
-     
-      <span class="day-name">Ore(Tonnes)</span>
-      <span class="date-number">00</span>
-    </div>
-  </div>
+
   <div class="content">
-   
+    <form action="/add/Employment" method="POST">
+  <div style="padding:auto;margin:auto; display: flex;
+  position: relative;
+  left:50px;
+  flex-wrap: wrap;
+  flex-direction: row;">
 
-
-
-
-    <div class="product-slider">
-      <button class="prev disabled">
-        <span class="icon">
-          <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-left"></use></svg>
-        </span>
-      </button>
-      <button class="next">
-        <span class="icon">
-          <svg class="icon icon-arrow-right"><use xlink:href="#icon-arrow-right"></use></svg>
-        </span>
-      </button>
-
-      <div class="product-slider__wrp swiper-wrapper">
-        <div class="product-slider__item swiper-slide" data-target="img4">
-          <div class="product-slider__card">
-            <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405223/starwars/item-4-bg.webp" alt="star wars" class="product-slider__cover">
-            <div class="product-slider__content">
-              <h1 class="product-slider__title">
-                Equipment  
-              </h1>
-              <div class="product-ctr">
-                <div class="product-labels">
-
-                  <div class="mb-3">
-                    <input class="form-check-input" type="checkbox" name="option1" id="option1" value="Blasthole drills">
-                    <label class="form-check-label" for="option1">
-                      Blasthole drills - $10 000.00
-                    </label>
-                    <p></p>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="product-slider__bottom">
-                <button class="product-slider__cart">
-                  SELECT
-                </button>
-
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="product-slider__item swiper-slide" data-target="img1">
-          <div class="product-slider__card">
-            <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405222/starwars/item-1-bg.webp" alt="star wars" class="product-slider__cover">
-            <div class="product-slider__content">
-              <h1 class="product-slider__title">
-                Equipment  
-              </h1>
-              <div class="product-ctr">
-                <div class="product-labels">
-
-                  <div class="mb-3">
-                    <input class="form-check-input" type="checkbox" name="option2" id="option2" value="Bucket-wheel excavators">
-                    <label class="form-check-label" for="option2">
-                      Bucket-wheel excavators - $10 000.00
-                    </label>
-                    <p></p>
-                  </div>
-
-                </div>
-
-              </div>
-
-              <div class="product-slider__bottom">
-                <button class="product-slider__cart">
-                  SELECT
-                </button>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-slider__item swiper-slide" data-target="img2">
-          <div class="product-slider__card">
-            <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405222/starwars/item-2-bg.webp" alt="star wars" class="product-slider__cover">
-            <div class="product-slider__content">
-              <h1 class="product-slider__title">
-                Equipment  
-              </h1>
-              <div class="product-ctr">
-                <div class="product-labels">
-                 
-                  <div class="mb-3">
-                    <input class="form-check-input" type="checkbox" name="option2" id="option2" value="Bucket-wheel excavators">
-                    <label class="form-check-label" for="option2">
-                      Bucket-wheel excavators - $10 000.00
-                    </label>
-                    <p></p>
-                  </div>
-
-                </div>
-
-
-              </div>
-
-              <div class="product-slider__bottom">
-                <button class="product-slider__cart">
-                  SELECT
-                </button>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="product-slider__item swiper-slide" data-target="img3">
-          <div class="product-slider__card">
-            <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405215/starwars/item-3-bg.webp" alt="star wars" class="product-slider__cover">
-            <div class="product-slider__content">
-              <h1 class="product-slider__title">
-                Equipment  
-              </h1>
-             
-              <div class="product-ctr">
-                <div class="product-labels">
-                  <div class="mb-3">
-                    <input class="form-check-input" type="checkbox" name="option5" id="option3" value="Wheel tractor scrapers">
-                    <label class="form-check-label" for="option3">
-                        Wheel tractor scrapers - $10 000.00
-                    </label>
-                    <p></p>
-                  </div>
-
-                </div>
-
-                
-
-              </div>
-
-              <div class="product-slider__bottom">
-                <button class="product-slider__cart">
-                  SELECT
-                </button>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-        
-
+      <div class="gridbox">
+        <input class="state" type="checkbox"  name="option1" id="option1" value="Blasthole drills">
+        <label class="label" for="option1">
+          <div class="indicator"></div>
+          <span class="text" style="color: navy;font-size: 15px;"><img width="170px" height="170px" src="/assets/media/huge exca.png">$4455</span>
+        </label>
       </div>
+      <div class="gridbox">
+        <input class="state" type="checkbox" name="option2" id="option2" value="Bucket-wheel excavators">
+        <label class="label" for="option2">
+          <div class="indicator"></div>
+          <span class="text" style="color: navy;font-size: 15px;"><img width="170px" height="170px" src="/assets/media/huge exca.png">$4455</span>
+        </label>
+      </div>
+      <div class="gridbox">
+        <input class="state" type="checkbox" name="option3" id="option3" value="Dozers">
+        <label class="label" for="option3">
+          <div class="indicator"></div>
+          <span class="text" style="color: navy;font-size: 15px;"><img width="170px" height="170px" src="/assets/media/huge exca.png">$4455</span>
+        </label>
+      </div>
+      <div class="gridbox">
+        <input class="state" type="checkbox" name="option4" id="option4" value="Dragline excavators">
+        <label class="label" for="option4">
+          <div class="indicator"></div>
+          <span class="text" style="color: navy;font-size: 15px;"><img width="170px" height="170px" src="/assets/media/huge exca.png">$4455</span>
+        </label>
+      </div>
+    
+  
+     <div class="gridbox">
+      <input class="state" type="checkbox" name="option5" id="option5" value="Wheel tractor scrapers">
+      <label class="label" for="option5">
+        <div class="indicator"></div>
+        <span class="text" style="color: navy;font-size: 15px;"><img width="170px" height="170px" src="/assets/media/huge exca.png">$4455</span>
+      </label>
+    </div>
+    <div class="gridbox">
+      <input class="state" type="checkbox" name="option6" id="option6" value="Highwall miners">
+      <label class="label" for="option6">
+        <div class="indicator"></div>
+        <span class="text" style="color: navy;font-size: 15px;"><img width="170px" height="170px" src="/assets/media/huge exca.png">$4455</span>
+      </label>
     </div>
 
+ 
+    </div>
+      <button class="product-slider__cart" id="ta" disabled  type="submit">
+      SELECT
+    </button>
+  </form>
   </div>
   <div class="dialogue-box">
     <div class="assistant-image">
@@ -175,7 +71,7 @@
       <span id="message"></span>
     </div>
   </div>
-  <audio id="audio" src="./tembyy.mp3" preload="auto"></audio>
+  <audio autoplay id="audio" src="/assets/media/copy 1.mp3" preload="auto"></audio>
 </div>
 <svg class="hidden" hidden>
   <symbol id="icon-arrow-left" viewBox="0 0 32 32">
@@ -264,3 +160,4 @@
   </div>
   </div>
 -->
+</div>

@@ -1,7 +1,9 @@
+var bt = document.getElementById('ta');
+bt.disabled = true;
 const messageElement = document.getElementById("message");
       const audioElement = document.getElementById("audio");
       const message =
-        "Are you ready to start mining? Tap the screen to increase your ore and watch as your mining operations take off! With each tap, you'll collect more minerals and move closer to becoming the ultimate Mineral Tycoon. Remember throughout the game you are going to face different obstacles in your quest. Take decisive and calculated actions . So let's see how far you can go!";
+        "Welcome to the Land Selection Stage. Here, you'll choose the perfect location and size for your mining block to kick off your mining operations. As you evaluate your options, consider factors such as proximity to resources, infrastructure, and the mineral deposit's potential yield. Keep in mind that the size of your mining block will influence your initial investment, operational costs, and overall mining capabilities. So, take your time, weigh the pros and cons of each location, and make a strategic decision that will set you on the path to becoming a mining industry leader!";
       let index = 0;
 
 
@@ -29,7 +31,6 @@ const messageElement = document.getElementById("message");
           setTimeout(typeMessage, 120);
         } else {
           bt.disabled = false;
-
           fadeOutDialogueBox();
         }
       }

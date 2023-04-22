@@ -1,16 +1,6 @@
-<!-- partial:index.partial.html -->
+<div style="height: 100vh;overflow: hidden;">
 <div class="wrapper">
-  <div class="calendar">
-    <div class="calendar-body">
-      <span class="month-name">Username</span>
-      <span class="day-name">Level</span>
-      <span class="day-name">Balance</span>
-      <span class="date-number">00</span>
-     
-      <span class="day-name">Ore(Tonnes)</span>
-      <span class="date-number">00</span>
-    </div>
-  </div>
+
   <div class="content">
    
 
@@ -48,13 +38,14 @@
         <div class="product-slider__item swiper-slide" data-target="img4">
           <div class="product-slider__card">
             <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405223/starwars/item-4-bg.webp" alt="star wars" class="product-slider__cover">
+            <form action="/add/land" method="POST">
             <div class="product-slider__content">
               <h1 class="product-slider__title">
                 DIAMOND
               </h1>
               <div class="product-ctr">
                 <div class="product-labels">
-                  <div class="product-labels__title">HELMET SIZE</div>
+                  <div class="product-labels__title">Select Mineral <input  type="radio" name="mineral" id="a" value="Diamond"></div>
 
                   <div class="product-labels__group">
                     <label class="product-labels__item">
@@ -105,26 +96,28 @@
                 </div>
 
               </div>
-
+               
               <div class="product-slider__bottom">
-                <button class="product-slider__cart">
+                <button class="product-slider__cart" id="ta" type="submit">
                   SELECT
                 </button>
 
               </div>
             </div>
+          </form>
           </div>
         </div>
         <div class="product-slider__item swiper-slide" data-target="img1">
           <div class="product-slider__card">
             <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405222/starwars/item-1-bg.webp" alt="star wars" class="product-slider__cover">
+            <form action="/add/land" method="POST">
             <div class="product-slider__content">
               <h1 class="product-slider__title">
                 GOLD
               </h1>
               <div class="product-ctr">
                 <div class="product-labels">
-                  <div class="product-labels__title">ENGINE UNIT</div>
+                  <div class="product-labels__title">Select Mineral <input  type="radio" disabled name="mineral" id="b" value="Gold"></div>
 
                   <div class="product-labels__group">
                     <label class="product-labels__item">
@@ -166,25 +159,27 @@
               </div>
 
               <div class="product-slider__bottom">
-                <button class="product-slider__cart">
+                <button class="product-slider__cart" id="ta" type="submit">
                   SELECT
                 </button>
 
               </div>
             </div>
+          </form>
           </div>
         </div>
 
         <div class="product-slider__item swiper-slide" data-target="img2">
           <div class="product-slider__card">
             <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405222/starwars/item-2-bg.webp" alt="star wars" class="product-slider__cover">
+            <form action="/add/land" method="POST">
             <div class="product-slider__content">
               <h1 class="product-slider__title">
                 PLATINUM
               </h1>
               <div class="product-ctr">
                 <div class="product-labels">
-                  <div class="product-labels__title">VOLTAGE RANGE</div>
+                  <div class="product-labels__title">Select Mineral <input  type="radio" name="mineral" id="c" value="Platinum"></div>
 
                   <div class="product-labels__group">
                     <label class="product-labels__item">
@@ -251,18 +246,20 @@
               </div>
 
               <div class="product-slider__bottom">
-                <button class="product-slider__cart">
+                <button class="product-slider__cart" id="ta" type="submit">
                   SELECT
                 </button>
 
               </div>
             </div>
+            </form>
           </div>
         </div>
 
         <div class="product-slider__item swiper-slide" data-target="img3">
           <div class="product-slider__card">
             <img src="https://res.cloudinary.com/muhammederdem/image/upload/q_60/v1536405215/starwars/item-3-bg.webp" alt="star wars" class="product-slider__cover">
+            <form action="/add/land" method="POST">
             <div class="product-slider__content">
               <h1 class="product-slider__title">
                 LITHIUM
@@ -270,7 +267,7 @@
              
               <div class="product-ctr">
                 <div class="product-labels">
-                  <div class="product-labels__title">HYPERDRIVE RATING</div>
+                  <div class="product-labels__title">Select Mineral <input  type="radio" name="mineral" id="d" value="Lithium"></div>
 
                   <div class="product-labels__group">
                     <label class="product-labels__item">
@@ -326,12 +323,13 @@
               </div>
 
               <div class="product-slider__bottom">
-                <button class="product-slider__cart">
+                <button class="product-slider__cart" disabled id="ta"  type="submit">
                   SELECT
                 </button>
 
               </div>
             </div>
+            </form>
           </div>
         </div>
 
@@ -350,7 +348,7 @@
       <span id="message"></span>
     </div>
   </div>
-  <audio id="audio" src="./tembyy.mp3" preload="auto"></audio>
+  <audio autoplay id="audio" src="/assets/media/copy 4.mp3" preload="auto"></audio>
 </div>
 
 <svg class="hidden" hidden>
@@ -401,3 +399,4 @@
     </div>
   </div>
 -->
+</div>

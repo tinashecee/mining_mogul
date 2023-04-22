@@ -10,16 +10,36 @@ let db = new sqlite3.Database(DBSOURCE, (err) => {
       throw err
     }else{
         console.log('Connected to the SQLite database.')
-        db.run(`CREATE TABLE user (
+        db.run(`CREATE TABLE userS (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             name text UNIQUE, 
+            age text UNIQUE,
+            gender text UNIQUE,
             account_balance REAL, 
             mineral TEXT, 
             location TEXT,
             type_of_mining TEXT
+            size INTEGER,
+            permits TEXT,
+            infrastructure TEXT,
+            equipment TEXT,
+            employees TEXT,
             )`,
         (err) => {
-           /* if (err) {
+           /* 
+           name:row.name,
+                    location:row.location,
+                    account_balance:row.account_balance,
+                    mineral:row.mineral,
+                    type_of_mining:row.type_of_mining,
+                    size:0,
+                    exploration:[],
+                    permits:[],
+                infrastructure:[],
+                equipment:[],
+            employees:[]
+           
+           if (err) {
                 // Table already created
             }else{
                 // Table just created, creating some rows

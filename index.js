@@ -38,6 +38,8 @@ app.get('', (req, res) => {
 
 app.post("/add/mineral", async (req,res) => {
    let name=req.body.name
+   let age = req.body.age
+   let gender = req.body.gender
    let account_balance=1000000
    let mineral=""
    let location=""
@@ -57,21 +59,23 @@ app.post("/add/mineral", async (req,res) => {
                   return;
                 }
                 currentUser={name:row.name,
+                    age:age,
+                    gender:gender,
                     location:row.location,
                     account_balance:row.account_balance,
                     mineral:row.mineral,
                     type_of_mining:row.type_of_mining,
                     size:0,
-                    exploration:[],
                     permits:[],
                 infrastructure:[],
                 equipment:[],
             employees:[]}
                 console.log(row)
-                res.render('mineral_selection',{layout:'./layouts/secondary',name:row.name,
+                res.render('mineral_selection',{layout:'./layouts/mineral-selection-layout',name:row.name,
                 location:row.location,
                 account_balance:row.account_balance,
                 mineral:row.mineral,
+                level:1,
                 type_of_mining:row.type_of_mining} )
                 
              });
@@ -92,10 +96,11 @@ app.post("/add/land", async (req,res) => {
              res.status(400).json({"error": err.message}) 
              return;
          }else{
-                 res.render('land_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 res.render('land_selection',{layout:'./layouts/land-selection-layout',name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
+                 level:1,
                  type_of_mining:currentUser.type_of_mining} )
                  
          }
@@ -103,7 +108,7 @@ app.post("/add/land", async (req,res) => {
         
      });
  })
- app.post("/add/exploration", async (req,res) => {
+ app.post("/add/permits", async (req,res) => {
     let location=req.body.location
     let price_sqrm=req.body.size
     land.forEach(e=>{
@@ -125,10 +130,11 @@ app.post("/add/land", async (req,res) => {
              res.status(400).json({"error": err.message})
              return;
          }else{
-                 res.render('exploration_and_development_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 res.render('permits_selection',{layout:'./layouts/permit-selection-layout',name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
+                 level:1,
                  type_of_mining:currentUser.type_of_mining} )
                  
          }
@@ -136,62 +142,7 @@ app.post("/add/land", async (req,res) => {
         
      });
  })
- app.post("/add/permits", async (req,res) => {
-    let exploration = []
-    let explorationCost = 0
-    if(req.body.option1 != null){
-       exploration.push(req.body.option1)
-       explorations.forEach(e=>{
-        if(e.type==req.body.option1){
-            explorationCost=explorationCost+e.cost
-        }
-       })
-    }
-    if(req.body.option2 != null){
-        exploration.push(req.body.option2)
-        explorations.forEach(e=>{
-         if(e.type==req.body.option2){
-             explorationCost=explorationCost+e.cost
-         }
-        })
-     }
-     if(req.body.option3 != null){
-        exploration.push(req.body.option3)
-        explorations.forEach(e=>{
-         if(e.type==req.body.option3){
-             explorationCost=explorationCost+e.cost
-         }
-        })
-     }
-     if(req.body.option4 != null){
-        exploration.push(req.body.option4)
-        explorations.forEach(e=>{
-         if(e.type==req.body.option4){
-             explorationCost=explorationCost+e.cost
-         }
-        })
-     }
-     currentUser.exploration=exploration
-     currentUser.account_balance-=explorationCost
-     console.log(currentUser)
-     var sql ='UPDATE user set account_balance = coalesce(?,account_balance) WHERE name = ?'
-     var params =[currentUser.account_balance, currentUser.name]
-     db.run(sql, params, function (err, result) {
-         if (err){
-             res.status(400).json({"error": err.message})
-             return;
-         }else{
-                 res.render('permits_selection',{layout:'./layouts/secondary',name:currentUser.name,
-                 location:currentUser.location,
-                 account_balance:currentUser.account_balance,
-                 mineral:currentUser.mineral,
-                 type_of_mining:currentUser.type_of_mining} )
-                 
-         }
-         
-        
-     });
- })
+
  app.post("/add/Infrastructure", async (req,res) => {
     let permit = []
     let permitsCost = 0
@@ -229,10 +180,11 @@ app.post("/add/land", async (req,res) => {
              res.status(400).json({"error": err.message})
              return;
          }else{
-                 res.render('initial_infrastructure',{layout:'./layouts/secondary',name:currentUser.name,
+                 res.render('initial_infrastructure',{layout:'./layouts/infrastructure-selection-layout',name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
+                 level:1,
                  type_of_mining:currentUser.type_of_mining} )
                  
          }
@@ -277,10 +229,11 @@ app.post("/add/land", async (req,res) => {
              res.status(400).json({"error": err.message})
              return;
          }else{
-                 res.render('mining_process',{layout:'./layouts/secondary',name:currentUser.name,
+                 res.render('mining_process',{layout:'./layouts/mining-process-selection-layout',name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
+                 level:1,
                  type_of_mining:currentUser.type_of_mining} )
                  
          }
@@ -304,10 +257,11 @@ app.post("/add/land", async (req,res) => {
              res.status(400).json({"error": err.message})
              return;
          }else{
-                 res.render('equipment_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 res.render('equipment_selection',{layout:'./layouts/equipment-selection-layout',name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
+                 level:1,
                  type_of_mining:currentUser.type_of_mining} )
                  
          }
@@ -366,30 +320,6 @@ app.post("/add/land", async (req,res) => {
         }
        })
     }
-    if(req.body.option7 != null){
-        equipment.push(req.body.option7)
-        equipments.forEach(e=>{
-        if(e.type==req.body.option7){
-            equipmentCost+=e.cost
-        }
-       })
-    }
-    if(req.body.option8 != null){
-        equipment.push(req.body.option8)
-        equipments.forEach(e=>{
-        if(e.type==req.body.option8){
-            equipmentCost+=e.cost
-        }
-       })
-    }
-    if(req.body.option9 != null){
-        equipment.push(req.body.option9)
-        equipments.forEach(e=>{
-        if(e.type==req.body.option9){
-            equipmentCost+=e.cost
-        }
-       })
-    }
      currentUser.equipment=equipment
      currentUser.account_balance-=equipmentCost
      console.log(currentUser)
@@ -400,10 +330,11 @@ app.post("/add/land", async (req,res) => {
              res.status(400).json({"error": err.message})
              return;
          }else{
-                 res.render('employees_selection',{layout:'./layouts/secondary',name:currentUser.name,
+                 res.render('employees_selection',{layout:'./layouts/employee-selection-layout',name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
+                 level:1,
                  type_of_mining:currentUser.type_of_mining} )
                  
          }
@@ -412,7 +343,7 @@ app.post("/add/land", async (req,res) => {
      });
  })
  
-app.post("/simulation-level-one", async (req,res) => {
+app.post("/simulation", async (req,res) => {
     let management_quantity=req.body.management
     let management_cost=0
     let general_employees_quantity=req.body.general_labour
@@ -444,10 +375,11 @@ app.post("/simulation-level-one", async (req,res) => {
              return;
          }else{
                 // res.render('simulation',{layout:'./layouts/secondary',name:currentUser.name,
-                res.render('simulation_level_one',{name:currentUser.name,
+                res.render('simulation_level_one',{layout:'./layouts/simulation-layout',name:currentUser.name,
                  location:currentUser.location,
                  account_balance:currentUser.account_balance,
                  mineral:currentUser.mineral,
+                 level:2,
                  type_of_mining:currentUser.type_of_mining} )
                  
          }
@@ -461,6 +393,7 @@ app.post("/simulation-level-one", async (req,res) => {
 });
 app.post('/mineral-selection',async (req,res) =>{
     res.render('mineral_selection',{layout:'./layouts/mineral-selection-layout',name:"currentUser.name",
+    level:1,
         account_balance:0});
 });
 app.get('/land-selection',async (req,res) =>{

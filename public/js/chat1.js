@@ -1,8 +1,14 @@
 
 var bt = document.getElementById('ta');
+var bt1 = document.getElementById('ta1');
+var bt2 = document.getElementById('ta2');
 var first_section = document.getElementById('first-section');
 var second_section = document.getElementById('second-section');
+var third_section = document.getElementById('third-section');
 second_section.style.display = "none";
+third_section.style.display = "none";
+bt1.style.display = "none";
+bt2.style.display = "none";
 bt.disabled = true;
 const messageElement = document.getElementById("message");
       const audioElement = document.getElementById("audio");
@@ -56,6 +62,25 @@ const messageElement = document.getElementById("message");
     function next(){
       if(document.querySelector('input[name="option1"]:checked').value != ""){
       first_section.style.display = "none";
+      bt.style.display = "none";
       second_section.style.display = "block";
+      bt1.style.display = "block";
+      }
+      
+    }
+    function submit(){
+      if(document.querySelector('input[name="option1"]:checked').value != ""){
+      first_section.style.display = "none";
+      bt.style.display = "none";
+      second_section.style.display = "block";
+      bt1.style.display = "block";
+      }
+    }
+    function complete(){
+      if(document.querySelector('input[name="option1"]:checked').value != ""){
+      first_section.style.display = "none";
+      bt.style.display = "none";
+      second_section.style.display = "block";
+      bt1.style.display = "block";
       }
     }

@@ -1,16 +1,6 @@
-<!-- partial:index.partial.html -->
+<div style="height: 100vh;overflow: hidden;">
 <div class="wrapper">
-  <div class="calendar">
-    <div class="calendar-body">
-      <span class="month-name">Username</span>
-      <span class="day-name">Level</span>
-      <span class="day-name">Balance</span>
-      <span class="date-number">00</span>
-     
-      <span class="day-name">Ore(Tonnes)</span>
-      <span class="date-number">00</span>
-    </div>
-  </div>
+ 
   <div class="content">
    
 
@@ -36,7 +26,7 @@
                     <div class="row">
                       <div class="col-md-6 offset-md-3">
                         <h2 class="text-center mb-4">Select land to mine</h2>
-                        <form action="/add/exploration" method="POST">
+                        <form action="/add/permits" method="POST">
                           <div class="mb-3">
                             <label for="mineralSelect" class="form-label">Location</label>
                             <select class="form-select" name="location" id="mineralSelect">
@@ -52,6 +42,7 @@
                               <option value="Manicaland">Manicaland  |  @$10 per square metre</option>
                               <option value="Midlands">Midlands  |  @$10 per square metre</option>
                             </select>
+                            
                           </div>
                           <br>
                           <div class="mb-3">
@@ -61,7 +52,7 @@
                           </div>
                 
                           <div class="product-slider__bottom">
-                            <button class="product-slider__cart" type="submit">
+                            <button class="product-slider__cart" disabled id="ta"  type="submit">
                               SELECT
                             </button>
             
@@ -103,7 +94,7 @@
       <span id="message"></span>
     </div>
   </div>
-  <audio id="audio" src="./tembyy.mp3" preload="auto"></audio>
+  <audio autoplay id="audio" src="/assets/media/copy 3.mp3" preload="auto"></audio>
 </div>
 <svg class="hidden" hidden>
   <symbol id="icon-arrow-left" viewBox="0 0 32 32">
@@ -122,7 +113,7 @@
     <div class="row">
       <div class="col-md-6 offset-md-3">
         <h2 class="text-center mb-4">Select land to mine</h2>
-        <form action="/add/exploration" method="POST">
+        <form action="/add/permits" method="POST">
           <div class="mb-3">
             <label for="mineralSelect" class="form-label">Area</label>
             <select class="form-select" name="location" id="mineralSelect">
@@ -151,3 +142,4 @@
     </div>
   </div>
 -->
+</div>

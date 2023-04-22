@@ -1,14 +1,7 @@
 <div style="height: 100vh;overflow: hidden;">
     <!-- partial:index.partial.html -->
     <div class="wrapper">
-      <div class="calendar">
-        <div class="calendar-body">
-          <span class="month-name">Username</span>
-          <span class="day-name">Level</span>
-          <span class="day-name">Balance</span>
-          <span class="date-number">00</span>
-        </div>
-      </div>
+     
       <div class="content">
         <div class="product-slider">
           <div class="product-slider__wrp swiper-wrapper">
@@ -44,13 +37,34 @@
                               <p>5. Sales agreements/contracts -these involve MMCZ, the producer and the customer and contain the terms and conditions of sale i.e. product, quantity, price, basis, delivery and payment terms </p>
                     
                             </div>
+                            <div id="third-section" class="form-group">
+                                <label>
+                                 Congratulations here are the Documents produced by MMCZ for you to sell your Minerals Internationally </label>
+                                <br>
+                                <p>1.	CD1</p>
+                                <br>
+                                <p>2.	Invoice</p>
+                                <br>
+                                <p>3.	Bill of Entry</p>
+                                <br>
+                                <p>4.	Release order</p>
+                                <br>
+                                <p>5.	Consignment note</p>
+                                <br>
+                              </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="product-slider__bottom">
-                    <button id="ta" disabled onclick="next()" class="product-slider__cart"> SUBMIT </button>
+                    <button id="ta" disabled onclick="next()" class="product-slider__cart"> Next </button>
+                  </div>
+                  <div class="product-slider__bottom">
+                    <button id="ta1" disabled onclick="submit()" class="product-slider__cart"> Submit </button>
+                  </div>
+                  <div class="product-slider__bottom">
+                    <button id="ta2" disabled onclick="complete()" class="product-slider__cart"> Sell Your Minerals </button>
                   </div>
                 </div>
               </div>
@@ -79,92 +93,4 @@
         <path d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
       </symbol>
     </svg>
-    <!-- 1.	Tech Investment Stage The Modal -->
-    <div id="myModal1" class="modal" style="height: 100vh;">
-      <!-- Modal content -->
-      <div id="labour-vid" style="height: 100vh;">
-        <div class="container-fluid" style="background-color: #0f2323;">
-          <div style="display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    height: 100%;
-                    width: 100%;
-                    overflow: hidden;">
-            <video id="myVideo1" src="/assets/media/labour dispute.mp4" controls></video>
-          </div>
-        </div>
-      </div>
-      <div class="centered">
-        <div id="investment-form" class="contain-fluid">
-          <div class="radiogroup">
-            <div class="wrapper1">
-              <input class="state" type="radio" name="labour" id="a" value="Negotiate finding a compromise">
-              <label class="label" for="a">
-                <div class="indicator"></div>
-                <span class="text">Negotiate finding a compromise: $90000</span>
-              </label>
-            </div>
-            <div class="wrapper1">
-              <input class="state" type="radio" name="labour" id="b" value="Offer 5% increment instead on 40%">
-              <label class="label" for="b">
-                <div class="indicator"></div>
-                <span class="text">Offer 5% increment instead on 40%: $115000</span>
-              </label>
-            </div>
-          </div>
-          <button id="tap" disabled onclick="dismiss1()" class="product-slider__cart"> SELECT </button>
-        </div>
-      </div>
-    </div>
-    <!-- 2.	Equipment Maintenance The Modal -->
-    <div id="myModal2" class="modal">
-      <!-- Modal content -->
-      <div id="env-vid" style="height: 100vh;">
-        <div class="container-fluid" style="background-color: #0f2323;">
-          <div style="display: flex;
-                align-items: center;
-                justify-content: center;
-                height: 100%;
-                width: 100%;
-                overflow: hidden;">
-            <video id="myVideo2" src="/assets/media/environment options.mp4" controls></video>
-          </div>
-        </div>
-      </div>
-      <div class="centered">
-        <div id="investment-form" class="contain-fluid">
-          <div class="radiogroup">
-            <div class="wrapper1">
-              <input class="state" type="radio" name="environment" id="c" value="Water Guardians">
-              <label class="label" for="c">
-                <div class="indicator"></div>
-                <span class="text">Water Guardians: $1000</span>
-              </label>
-            </div>
-            <div class="wrapper1">
-              <input class="state" type="radio" name="environment" id="d" value="Habitat Heroes">
-              <label class="label" for="d">
-                <div class="indicator"></div>
-                <span class="text">Habitat Heroes: $115000</span>
-              </label>
-            </div>
-            <div class="wrapper1">
-              <input class="state" type="radio" name="environment" id="e" value="Waste Wizards">
-              <label class="label" for="e">
-                <div class="indicator"></div>
-                <span class="text">Waste Wizards: $115000</span>
-              </label>
-            </div>
-            <div class="wrapper1">
-              <input class="state" type="radio" name="environment" id="f" value="Reforestation Rockstars">
-              <label class="label" for="f">
-                <div class="indicator"></div>
-                <span class="text">Reforestation Rockstars: $115000</span>
-              </label>
-            </div>
-          </div>
-          <button onclick="dismiss2()" class="product-slider__cart"> SELECT </button>
-        </div>
-      </div>
-    </div>
-  </div>
+  

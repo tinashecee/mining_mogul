@@ -1,5 +1,6 @@
 
   .dialogue-box {
+    z-index: 5;
     overflow: hidden;
     position: absolute;
     left: 60px;

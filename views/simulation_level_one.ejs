@@ -1,14 +1,6 @@
 <div style="height: 100vh;overflow: hidden;">
   <!-- partial:index.partial.html -->
-  <div class="wrapper">
-    <div class="calendar">
-      <div class="calendar-body">
-        <span class="month-name">Username</span>
-        <span class="day-name">Level</span>
-        <span class="day-name">Balance</span>
-        <span class="date-number">00</span>
-      </div>
-    </div>
+
     <div class="content">
       <div class="centered">
         <div id="card">
@@ -174,11 +166,19 @@ display: flex;">
         display: flex;">
       <div class="centered">
         <div class="contain-fluid">
-          <div class="radiogroup" style="background: rgba(255, 255, 255, 0.8);">
-            <h1>Congratulations</h1>
+          <div  style="background: rgba(255, 255, 255, 0.8); margin: auto;
+          padding: auto;
+          height: 600px;
+          width: 960px;
+          width: auto; /* Set the height of the div to 100% of viewport height */
+        border-radius: 16px;
+        box-shadow:
+          4px 4px 4px 0px #d1d9e6 inset,
+          -4px -4px 4px 0px #ffffff inset;">
+            <h1 style="font-size: 40px;">Congratulations</h1>
             <span>
               <h3>Your total mining yeild was :</h3>
-              <h1 style="font-size: 40px;" id="yeild"> Kgs</h1>
+              <h1 id="yeild"> Kgs</h1>
             </span>
             <br>
             <h3>Choose your next move from the options below</h3>
@@ -186,12 +186,15 @@ display: flex;">
             <div style="padding: 10px;margin: 10px;width:100%">
               <a href="/mmcz" class="fcc-btn"> Refine your ore then market and sell minerals with MMCZ </a>
             </div>
+            <br>
             <div style="padding: 10px;margin: 10px;">
               <a href="/mmcz" class="fcc-btn"> Market and sell your unrefined ore with MMCZ </a>
             </div>
+            <br>
             <div style="padding: 10px;margin: 10px;">
               <a href="/alternative" class="fcc-btn"> Market and sell your unrefined ore with on the market yourself </a>
             </div>
+            <br>
             <div style="padding: 10px;margin: 10px;">
               <a href="/alternative" class="fcc-btn"> Refine your ore then market and sell minerals on the market yourself </a>
             </div>

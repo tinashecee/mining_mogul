@@ -1,7 +1,9 @@
+var bt = document.getElementById('ta');
+bt.disabled = true;
 const messageElement = document.getElementById("message");
       const audioElement = document.getElementById("audio");
       const message =
-        "Are you ready to start mining? Tap the screen to increase your ore and watch as your mining operations take off! With each tap, you'll collect more minerals and move closer to becoming the ultimate Mineral Tycoon. Remember throughout the game you are going to face different obstacles in your quest. Take decisive and calculated actions . So let's see how far you can go!";
+        "Building a strong team is key to the success of your mining venture. Here, you'll have the opportunity to handpick skilled professionals with various roles and expertise to get your mining operation up and running. Consider the importance of hiring experienced miners, engineers, safety officers, and administrative staff to ensure the smooth functioning of your enterprise. As you assemble your dream team, remember to balance the costs of hiring and training with the benefits of a skilled and motivated workforce.";
       let index = 0;
 
 
@@ -29,7 +31,6 @@ const messageElement = document.getElementById("message");
           setTimeout(typeMessage, 120);
         } else {
           bt.disabled = false;
-
           fadeOutDialogueBox();
         }
       }

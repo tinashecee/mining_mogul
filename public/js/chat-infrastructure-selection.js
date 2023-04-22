@@ -1,7 +1,9 @@
+var bt = document.getElementById('ta');
+bt.disabled = true;
 const messageElement = document.getElementById("message");
       const audioElement = document.getElementById("audio");
       const message =
-        "Are you ready to start mining? Tap the screen to increase your ore and watch as your mining operations take off! With each tap, you'll collect more minerals and move closer to becoming the ultimate Mineral Tycoon. Remember throughout the game you are going to face different obstacles in your quest. Take decisive and calculated actions . So let's see how far you can go!";
+        "As a visionary mining entrepreneur, you understand the importance of establishing a solid foundation for your business. Here, you'll have the opportunity to plan and invest in critical infrastructure like power supplies, roads, and transportation networks to support your mining operations. As you make your selections, consider factors such as efficiency, cost-effectiveness, and sustainability, ensuring that your choices align with your long-term business goals.";
       let index = 0;
 
 
@@ -29,7 +31,6 @@ const messageElement = document.getElementById("message");
           setTimeout(typeMessage, 120);
         } else {
           bt.disabled = false;
-
           fadeOutDialogueBox();
         }
       }

@@ -92,7 +92,6 @@ function stepy(inst)
 	}
 }
 function firstModal(){
-  modal3.style.display = "block";
     if(countNm == 1){
       paused = false;
         countNm+=1

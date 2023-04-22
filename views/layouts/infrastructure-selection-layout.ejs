@@ -2,17 +2,27 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
-  <title> Star Wars Imperial Army Product Slider | Nothing4us </title>
+  <title> Mining Tycoon | MMCZ  </title>
   <meta name="viewport"
       content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
 <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.3.5/css/swiper.min.css'>
-<link rel="stylesheet" href="/css/style2.css">
+<link rel="stylesheet" href="/css/style3.css">
 <link rel="stylesheet" href="/css/chat.css">
 
 </head>
 <body>
-
+  <div class="calendar">
+    <div class="calendar-body">
+      <span class="month-name"><%= name %></span>
+      <span class="day-name">Level <%= level %></span>
+      <span class="day-name">Balance</span>
+      <span class="date-number"><%= account_balance %></span>
+     
+      <span class="day-name">Ore(Tonnes)</span>
+      <span class="date-number">00</span>
+    </div>
+  </div>
   <%- body %>
 
 <!-- partial -->
