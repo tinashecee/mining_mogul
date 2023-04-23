@@ -42,13 +42,9 @@
                                  Congratulations here are the Documents produced by MMCZ for you to sell your Minerals Internationally </label>
                                 <br>
                                 <p>1.	CD1</p>
-                                <br>
                                 <p>2.	Invoice</p>
-                                <br>
                                 <p>3.	Bill of Entry</p>
-                                <br>
                                 <p>4.	Release order</p>
-                                <br>
                                 <p>5.	Consignment note</p>
                                 <br>
                               </div>
@@ -58,13 +54,13 @@
                     </div>
                   </div>
                   <div class="product-slider__bottom">
-                    <button id="ta" disabled onclick="next()" class="product-slider__cart"> Next </button>
+                    <button id="ta"  onclick="next()" class="product-slider__cart"> Next </button>
                   </div>
                   <div class="product-slider__bottom">
-                    <button id="ta1" disabled onclick="submit()" class="product-slider__cart"> Submit </button>
+                    <button id="ta1"  onclick="submit()" class="product-slider__cart"> Submit </button>
                   </div>
                   <div class="product-slider__bottom">
-                    <button id="ta2" disabled onclick="complete()" class="product-slider__cart"> Sell Your Minerals </button>
+                    <button id="ta2"  onclick="complete()" class="product-slider__cart"> Sell Your Minerals </button>
                   </div>
                 </div>
               </div>
@@ -72,18 +68,6 @@
           </div>
         </div>
       </div>
-      <div class="dialogue-box">
-        <div class="assistant-image">
-          <img src="/assets/media/tembyy.png" alt="Assistant" />
-        </div>
-        <div class="assistant-message">
-          <span class="typing"></span>
-          <span id="message"></span>
-        </div>
-      </div>
-      <audio id="myAudio" autoplay>
-        <source src="/assets/media/simulation-intro.mp3" type="audio/mpeg">
-      </audio>
     </div>
     <svg class="hidden" hidden>
       <symbol id="icon-arrow-left" viewBox="0 0 32 32">
@@ -93,4 +77,83 @@
         <path d="M31.296 14.336l-9.888-9.888c-0.896-0.896-2.432-0.896-3.328 0s-0.896 2.432 0 3.328l5.824 5.856h-21.536c-1.312 0-2.368 1.056-2.368 2.368s1.056 2.368 2.368 2.368h21.568l-5.856 5.824c-0.896 0.896-0.896 2.432 0 3.328 0.48 0.48 1.088 0.704 1.696 0.704s1.216-0.224 1.696-0.704l9.824-9.824c0.448-0.448 0.704-1.056 0.704-1.696s-0.224-1.248-0.704-1.664z"></path>
       </symbol>
     </svg>
-  
+    <div id="myModal1a" class="modal" style="height: 100vh;">
+      <!-- Modal content -->
+      <div id="intro-vid" style="height: 100vh;">
+        <div class="container-fluid" style="background-color: #0f2323;">
+          <div style="display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100%;
+                width: 100%;
+                overflow: hidden;">
+            <video id="myVideo1a" src="/assets/media/1 welcome.mp4" controls></video>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div id="myModal1b" class="modal" style="height: 100vh;">
+        <!-- Modal content -->
+        <div id="intro-vid" style="height: 100vh;">
+          <div class="container-fluid" style="background-color: #0f2323;">
+            <div style="display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  height: 100%;
+                  width: 100%;
+                  overflow: hidden;">
+              <video id="myVideo1b" src="/assets/media/2 next step.mp4" controls></video>
+            </div>
+          </div>
+        </div>
+        </div>
+        <div id="myModal1c" class="modal" style="height: 100vh;">
+          <!-- Modal content -->
+          <div id="intro-vid" style="height: 100vh;">
+            <div class="container-fluid" style="background-color: #0f2323;">
+              <div style="display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    height: 100%;
+                    width: 100%;
+                    overflow: hidden;">
+                <video id="myVideo1c" src="/assets/media/3 once all.mp4" controls></video>
+              </div>
+            </div>
+          </div>
+          </div>
+          <div id="myModal1d" class="modal" style="height: 100vh;">
+            <!-- Modal content -->
+            <div id="intro-vid" style="height: 100vh;">
+              <div class="container-fluid" style="background-color: #0f2323;">
+                <div style="display: flex;
+                      align-items: center;
+                      justify-content: center;
+                      height: 100%;
+                      width: 100%;
+                      overflow: hidden;">
+                  <video id="myVideo1d" src="/assets/media/4 conclusion.mp4" controls></video>
+                </div>
+              </div>
+            </div>
+            </div>
+            <div id="myModal1d" class="modal" style="height: 100vh; background-color: #f7f7f7;">
+              <audio
+      id="winning-sound"
+      src="winning_sound.mp3"
+      preload="auto"
+      autoplay
+    ></audio>
+    <div class="container">
+      <h1>Congratulations!</h1>
+      <p>
+        You've successfully completed your mining venture and become a Mineral
+        Tycoon!
+      </p>
+      <p>
+        You sold <%= yeild %> kgs of <%= mineral %> and made : $10,000,000
+      </p>
+      <button onclick="playWinningSound()">Celebrate!</button>
+    </div>
+              </div>
+  </div>

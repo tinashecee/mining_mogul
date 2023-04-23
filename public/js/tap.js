@@ -169,8 +169,8 @@ function firstModal(){
           function myHandler2(e) {
             env_vid.style.display = "none";
           }
-          document.getElementById('myVideo1a').addEventListener('ended',myHandler2,false);
-          function myHandler2(e) {
+          document.getElementById('myVideo1a').addEventListener('ended',myHandler3,false);
+          function myHandler3(e) {
             modal1a.style.display = "none";
             secondModal()
           }
@@ -179,8 +179,16 @@ function firstModal(){
             setTimeout(() => {
               modal3.style.display = "block";
               tripp.innerHTML=count
-              
-            }, 5000);
+              fetch('/add-ore',{
+                method: 'POST',
+                body: JSON.stringify({
+                  yeild: count
+                }),
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8'
+                },
+            })
+            }, 10000);
           }
 
           

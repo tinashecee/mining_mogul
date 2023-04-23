@@ -66,6 +66,7 @@ app.post("/add/mineral", async (req,res) => {
                     mineral:row.mineral,
                     type_of_mining:row.type_of_mining,
                     size:0,
+                    mineral_yeild:0,
                     permits:[],
                 infrastructure:[],
                 equipment:[],
@@ -448,12 +449,16 @@ app.get('/alternative-sales-channels',async (req,res) =>{
     res.render('alternative_sales_channels',{layout:'./layouts/simulation-layout'});
 });
 app.get('/mmcz',async (req,res) =>{
-    res.render('mmcz_selection',{layout:'./layouts/mmcz-layout'});
+    res.render('mmcz_selection',{layout:'./layouts/mmcz-layout',mineral:currentUser.mineral, level:2,mineral_yeild,yeild:currentUser.mineral_yeild,name:currentUser.name});
 });
 app.get('/results',async (req,res) =>{
     res.render('results',{layout:'./layouts/main'});
 });
 app.get('/alternative',async (req,res) =>{
     res.render('alternative_sales_channels',{layout:'./layouts/simulation-layout'});
+});
+app.post('/add-ore',async (req,res) =>{
+    let ore= req.body.yeild
+    currentUser.mineral_yeild = ore
 });
 app.listen(PORT, console.log(`Server running on port ${PORT}`));
